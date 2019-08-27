@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ul3-BV-4vv">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mbd-ul-FOL">
+            <objects>
+                <tabBarController id="Ul3-BV-4vv" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Fmg-z3-qBE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sjI-m6-gjf" kind="relationship" relationship="viewControllers" id="1Rz-Nd-onj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRU-9F-IGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2546" y="-1238"/>
+        </scene>
+        <!--Alarm List View Controller-->
+        <scene sceneID="11c-Vi-U67">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9h-x2-lrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vna-gi-y4A" customClass="AlarmListViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="168-az-Ahy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bgset1Rainy_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="iVM-4n-FfV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-hv-VWG">
+                                <rect key="frame" x="305" y="619" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IQ5-iU-LfJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="x76-6o-EK1"/>
+                                </constraints>
+                                <state key="normal" image="IconFabPlus_Normal"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-nR-yph">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmListTableViewCell" rowHeight="100" id="uZc-oC-taa" customClass="AlarmListTableViewCell" customModule="Alarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZc-oC-taa" id="tj6-Uw-Odj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3h-GQ-GDK">
+                                                    <rect key="frame" x="72.666666666666686" y="0.0" width="230" height="100"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b3h-GQ-GDK" firstAttribute="centerX" secondItem="tj6-Uw-Odj" secondAttribute="centerX" id="bD2-RD-Yzi"/>
+                                                <constraint firstItem="b3h-GQ-GDK" firstAttribute="centerY" secondItem="tj6-Uw-Odj" secondAttribute="centerY" id="j7q-Q7-Jwp"/>
+                                                <constraint firstItem="b3h-GQ-GDK" firstAttribute="top" secondItem="tj6-Uw-Odj" secondAttribute="top" id="tTt-9K-UwM"/>
+                                                <constraint firstAttribute="bottom" secondItem="b3h-GQ-GDK" secondAttribute="bottom" id="ziv-92-JRC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="testlabel" destination="b3h-GQ-GDK" id="az4-KE-9cD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vna-gi-y4A" id="76q-Md-1Ed"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dh8-nR-yph" firstAttribute="centerX" secondItem="iVM-4n-FfV" secondAttribute="centerX" id="E29-PS-xRg"/>
+                            <constraint firstItem="iVM-4n-FfV" firstAttribute="top" secondItem="168-az-Ahy" secondAttribute="top" id="EKm-mY-bjl"/>
+                            <constraint firstItem="dh8-nR-yph" firstAttribute="width" secondItem="iVM-4n-FfV" secondAttribute="width" id="Fup-8e-pQN"/>
+                            <constraint firstItem="iVM-4n-FfV" firstAttribute="leading" secondItem="168-az-Ahy" secondAttribute="leading" id="JQ2-z6-Z3g"/>
+                            <constraint firstItem="dh8-nR-yph" firstAttribute="centerY" secondItem="iVM-4n-FfV" secondAttribute="centerY" id="NDC-c1-k08"/>
+                            <constraint firstItem="dh8-nR-yph" firstAttribute="height" secondItem="iVM-4n-FfV" secondAttribute="height" id="TDE-Xe-tJS"/>
+                            <constraint firstItem="iVM-4n-FfV" firstAttribute="trailing" secondItem="WAe-Yo-ExU" secondAttribute="trailing" id="aMt-ue-f30"/>
+                            <constraint firstItem="WAe-Yo-ExU" firstAttribute="bottom" secondItem="nl6-hv-VWG" secondAttribute="bottom" constant="60" id="afj-Pa-1ae"/>
+                            <constraint firstItem="WAe-Yo-ExU" firstAttribute="trailing" secondItem="nl6-hv-VWG" secondAttribute="trailing" constant="20" id="oUd-m0-9rs"/>
+                            <constraint firstAttribute="bottom" secondItem="iVM-4n-FfV" secondAttribute="bottom" id="pyh-uX-vHv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WAe-Yo-ExU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2XQ-83-Qgq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="iconListGear_Normal" id="odG-oU-ofl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addAlarmButton" destination="nl6-hv-VWG" id="ODn-mP-sFk"/>
+                        <outlet property="alarmListTableView" destination="dh8-nR-yph" id="Q8n-Zy-KWu"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-389.60000000000002" y="-1275.3694581280788"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hYN-68-xZ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sjI-m6-gjf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon-navi-01-dis.2_Normal" selectedImage="filled_icon-navi-01-dis.1_Normal" id="aQf-wv-Yaf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CKK-9J-Smf">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vna-gi-y4A" kind="relationship" relationship="rootViewController" id="hxF-bn-opd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXf-TH-V7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1332" y="-1275.3694581280788"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bgset1Rainy_Normal" width="234.33332824707031" height="416.66665649414062"/>
+        <image name="IconFabPlus_Normal" width="16" height="16"/>
+        <image name="filled_icon-navi-01-dis.1_Normal" width="25" height="25"/>
+        <image name="icon-navi-01-dis.2_Normal" width="72" height="72"/>
+        <image name="iconListGear_Normal" width="40" height="40"/>
+    </resources>
+</document>

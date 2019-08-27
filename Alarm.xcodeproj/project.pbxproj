@@ -11,8 +11,14 @@
 		C03FB3D4230FC1BC0015D756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03FB3D2230FC1BC0015D756 /* Main.storyboard */; };
 		C03FB3D7230FC1BC0015D756 /* Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3D5230FC1BC0015D756 /* Alarm.xcdatamodeld */; };
 		C03FB3D9230FC1BE0015D756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03FB3D8230FC1BE0015D756 /* Assets.xcassets */; };
-		C03FB3DC230FC1BE0015D756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03FB3DA230FC1BE0015D756 /* LaunchScreen.storyboard */; };
 		C03FB3EE230FC6F80015D756 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3ED230FC6F80015D756 /* AlarmListViewController.swift */; };
+		C03FB3F3230FE4DF0015D756 /* AlarmListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3F2230FE4DF0015D756 /* AlarmListTableViewCell.swift */; };
+		C03FB3F6230FE59E0015D756 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3F5230FE59E0015D756 /* CommonViewController.swift */; };
+		C03FB3F92312C2AC0015D756 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03FB3F82312C2AC0015D756 /* Launch Screen.storyboard */; };
+		C03FB3FB2313BA130015D756 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3FA2313BA130015D756 /* DataManager.swift */; };
+		C03FB3FD2313BF780015D756 /* DataManager+Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3FC2313BF780015D756 /* DataManager+Alarm.swift */; };
+		C03FB4002313D0370015D756 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3FF2313D0370015D756 /* MainViewController.swift */; };
+		C03FB4022313D0490015D756 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB4012313D0490015D756 /* SetTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +27,16 @@
 		C03FB3D3230FC1BC0015D756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C03FB3D6230FC1BC0015D756 /* Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alarm.xcdatamodel; sourceTree = "<group>"; };
 		C03FB3D8230FC1BE0015D756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C03FB3DB230FC1BE0015D756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C03FB3DD230FC1BE0015D756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C03FB3ED230FC6F80015D756 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
+		C03FB3F2230FE4DF0015D756 /* AlarmListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewCell.swift; sourceTree = "<group>"; };
+		C03FB3F5230FE59E0015D756 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		C03FB3F82312C2AC0015D756 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C03FB3FA2313BA130015D756 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C03FB3FC2313BF780015D756 /* DataManager+Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Alarm.swift"; sourceTree = "<group>"; };
+		C03FB3FE2313CB9C0015D756 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C03FB3FF2313D0370015D756 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C03FB4012313D0490015D756 /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +69,15 @@
 		C03FB3CD230FC1BC0015D756 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				C03FB3E5230FC4BA0015D756 /* View */,
-				C03FB3E4230FC4A60015D756 /* Controller */,
-				C03FB3E3230FC2EB0015D756 /* Model */,
 				C03FB3CE230FC1BC0015D756 /* AppDelegate.swift */,
-				C03FB3D2230FC1BC0015D756 /* Main.storyboard */,
-				C03FB3D8230FC1BE0015D756 /* Assets.xcassets */,
-				C03FB3DA230FC1BE0015D756 /* LaunchScreen.storyboard */,
-				C03FB3DD230FC1BE0015D756 /* Info.plist */,
-				C03FB3D5230FC1BC0015D756 /* Alarm.xcdatamodeld */,
+				C03FB3F0230FE28B0015D756 /* Storyboard */,
+				C03FB3EF230FE2540015D756 /* Resources */,
+				C03FB3E5230FC4BA0015D756 /* View */,
+				C03FB3E4230FC4A60015D756 /* Module */,
+				C03FB3E3230FC2EB0015D756 /* Model */,
+				C03FB3FE2313CB9C0015D756 /* test.playground */,
+				C03FB3FF2313D0370015D756 /* MainViewController.swift */,
+				C03FB4012313D0490015D756 /* SetTimeViewController.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -72,16 +85,19 @@
 		C03FB3E3230FC2EB0015D756 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C03FB3FA2313BA130015D756 /* DataManager.swift */,
+				C03FB3FC2313BF780015D756 /* DataManager+Alarm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C03FB3E4230FC4A60015D756 /* Controller */ = {
+		C03FB3E4230FC4A60015D756 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C03FB3ED230FC6F80015D756 /* AlarmListViewController.swift */,
+				C03FB3F4230FE5740015D756 /* Common */,
+				C03FB3F1230FE4510015D756 /* AlarmList */,
 			);
-			path = Controller;
+			path = Module;
 			sourceTree = "<group>";
 		};
 		C03FB3E5230FC4BA0015D756 /* View */ = {
@@ -97,6 +113,42 @@
 			children = (
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C03FB3EF230FE2540015D756 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB3D8230FC1BE0015D756 /* Assets.xcassets */,
+				C03FB3DD230FC1BE0015D756 /* Info.plist */,
+				C03FB3D5230FC1BC0015D756 /* Alarm.xcdatamodeld */,
+				C03FB3F82312C2AC0015D756 /* Launch Screen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C03FB3F0230FE28B0015D756 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB3D2230FC1BC0015D756 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C03FB3F1230FE4510015D756 /* AlarmList */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB3ED230FC6F80015D756 /* AlarmListViewController.swift */,
+				C03FB3F2230FE4DF0015D756 /* AlarmListTableViewCell.swift */,
+			);
+			path = AlarmList;
+			sourceTree = "<group>";
+		};
+		C03FB3F4230FE5740015D756 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB3F5230FE59E0015D756 /* CommonViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03FB3DC230FC1BE0015D756 /* LaunchScreen.storyboard in Resources */,
+				C03FB3F92312C2AC0015D756 /* Launch Screen.storyboard in Resources */,
 				C03FB3D9230FC1BE0015D756 /* Assets.xcassets in Resources */,
 				C03FB3D4230FC1BC0015D756 /* Main.storyboard in Resources */,
 			);
@@ -171,8 +223,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03FB3CF230FC1BC0015D756 /* AppDelegate.swift in Sources */,
+				C03FB3FB2313BA130015D756 /* DataManager.swift in Sources */,
+				C03FB4022313D0490015D756 /* SetTimeViewController.swift in Sources */,
+				C03FB3FD2313BF780015D756 /* DataManager+Alarm.swift in Sources */,
 				C03FB3EE230FC6F80015D756 /* AlarmListViewController.swift in Sources */,
+				C03FB3F6230FE59E0015D756 /* CommonViewController.swift in Sources */,
 				C03FB3D7230FC1BC0015D756 /* Alarm.xcdatamodeld in Sources */,
+				C03FB3F3230FE4DF0015D756 /* AlarmListTableViewCell.swift in Sources */,
+				C03FB4002313D0370015D756 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,14 +243,6 @@
 				C03FB3D3230FC1BC0015D756 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C03FB3DA230FC1BE0015D756 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C03FB3DB230FC1BE0015D756 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,7 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93P8MMPUWH;
-				INFOPLIST_FILE = Alarm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Alarm/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -339,7 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93P8MMPUWH;
-				INFOPLIST_FILE = Alarm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Alarm/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
