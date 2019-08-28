@@ -10,7 +10,7 @@ import UIKit
 
 class AlarmListViewController: CommonViewController {
     
-    var list = [1, 2, 3, 4, 5 ,6 ,7 ,8 ,9 ,10, 1, 2, 3, 4, 5 ,6 ,7 ,8 ,9 ,10]
+    var list = ["11:00", "22:00", "33:00", "44:00", "55:00" ,"11:00", "22:00", "33:00", "44:00", "55:00"]
     
     @IBOutlet weak var addAlarmButton: UIButton!
     
@@ -23,8 +23,6 @@ class AlarmListViewController: CommonViewController {
         alarmListTableView.backgroundColor = UIColor.clear
         navigationController?.navigationBar.transparentNavigationBar()
         tabBarController?.tabBar.transparentTabBar()
-        
-        
     }
     
     
@@ -32,20 +30,34 @@ class AlarmListViewController: CommonViewController {
 }
 extension AlarmListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return list.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let target = list[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.identifier, for: indexPath) as! AlarmListTableViewCell
-        cell.testlabel.text = "\(target)"
-        return cell
+        switch indexPath.section{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.identifier, for: indexPath) as! AlarmListTableViewCell
+            let target = list[indexPath.row]
+            cell.timeLabel.text = "\(target)"
+            return cell
+        default:
+            fatalError()
+        }
     }
-    
-    
 }
 
 extension UINavigationBar {

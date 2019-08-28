@@ -13,12 +13,14 @@ class AlarmListTableViewCell: UITableViewCell {
     static let identifier = "AlarmListTableViewCell"
 
     
+    @IBOutlet weak var bgView: UIView!
     
-    @IBOutlet weak var testlabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     backgroundColor = UIColor.clear
+        bgView.layer.cornerRadius = bgView.frame.height / 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

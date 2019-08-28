@@ -19,6 +19,7 @@
 		C03FB3FD2313BF780015D756 /* DataManager+Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3FC2313BF780015D756 /* DataManager+Alarm.swift */; };
 		C03FB4002313D0370015D756 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB3FF2313D0370015D756 /* MainViewController.swift */; };
 		C03FB4022313D0490015D756 /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB4012313D0490015D756 /* SetTimeViewController.swift */; };
+		C03FB42623163FFE0015D756 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03FB42523163FFE0015D756 /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C03FB3FE2313CB9C0015D756 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C03FB3FF2313D0370015D756 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C03FB4012313D0490015D756 /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
+		C03FB42523163FFE0015D756 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				C03FB3ED230FC6F80015D756 /* AlarmListViewController.swift */,
 				C03FB3F2230FE4DF0015D756 /* AlarmListTableViewCell.swift */,
+				C03FB42523163FFE0015D756 /* WeatherTableViewCell.swift */,
 			);
 			path = AlarmList;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03FB42623163FFE0015D756 /* WeatherTableViewCell.swift in Sources */,
 				C03FB3CF230FC1BC0015D756 /* AppDelegate.swift in Sources */,
 				C03FB3FB2313BA130015D756 /* DataManager.swift in Sources */,
 				C03FB4022313D0490015D756 /* SetTimeViewController.swift in Sources */,
