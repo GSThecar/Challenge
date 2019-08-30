@@ -14,7 +14,7 @@
         <scene sceneID="mbd-ul-FOL">
             <objects>
                 <tabBarController id="Ul3-BV-4vv" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Fmg-z3-qBE">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" selectionIndicatorImage="ImageTabBarIndicator_Normal" shadowImage="ImageTabBarShadow_Normal" id="Fmg-z3-qBE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,12 +38,54 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bgset1Rainy_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="iVM-4n-FfV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T15-lQ-D6M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="di6-YO-W9e">
+                                <rect key="frame" x="140" y="305" width="95" height="119"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconAlarmPlus_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="2Qy-8f-sV3">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldq-OA-QMN">
+                                        <rect key="frame" x="2.3333333333333428" y="95" width="90.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-nR-yph">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="uZc-oC-taa" customClass="WeatherTableViewCell" customModule="Alarm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RemainTimeTableViewCell" textLabel="XMM-NN-F7U" detailTextLabel="Nmz-yW-AA4" style="IBUITableViewCellStyleSubtitle" id="7Vy-C3-Uam" customClass="RemainTimeTableViewCell" customModule="Alarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Vy-C3-Uam" id="fj4-j4-ZHB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Next Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XMM-NN-F7U">
+                                                    <rect key="frame" x="15" y="2.3333333333333321" width="57" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="00hr 00remainning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nmz-yW-AA4">
+                                                    <rect key="frame" x="15" y="16" width="168.66666666666666" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="uZc-oC-taa" customClass="WeatherTableViewCell" customModule="Alarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZc-oC-taa" id="tj6-Uw-Odj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -73,7 +115,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmListTableViewCell" rowHeight="140" id="GN4-Bb-Gsk" customClass="AlarmListTableViewCell" customModule="Alarm" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="116" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GN4-Bb-Gsk" id="GD6-Sy-k66">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
@@ -170,6 +212,7 @@
                                                         </view>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vv2-f3-Ysm">
                                                             <rect key="frame" x="262" y="23" width="51" height="31"/>
+                                                            <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </switch>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-B6-XF0">
                                                             <rect key="frame" x="321" y="25.666666666666664" width="6" height="26"/>
@@ -208,7 +251,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="vna-gi-y4A" id="76q-Md-1Ed"/>
+                                    <outlet property="dataSource" destination="vna-gi-y4A" id="lhm-2b-TY6"/>
+                                    <outlet property="delegate" destination="vna-gi-y4A" id="9h4-54-hXJ"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-hv-VWG">
@@ -219,19 +263,91 @@
                                     <constraint firstAttribute="width" constant="50" id="x76-6o-EK1"/>
                                 </constraints>
                                 <state key="normal" image="IconFabPlus_Normal"/>
+                                <connections>
+                                    <action selector="addAlarm:" destination="vna-gi-y4A" eventType="touchUpInside" id="rGb-Ah-e2e"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E7z-hL-qiO">
+                                <rect key="frame" x="225" y="549" width="130" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkM-SH-aMV">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="Alarm">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="owU-7P-Y6x" kind="presentation" id="Jwx-9a-guk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQk-dp-0CY">
+                                        <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hyR-pv-N4j"/>
+                                            <constraint firstAttribute="width" constant="50" id="tIp-F3-2iT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" image="icon-navi-01-dis.3_Normal"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5QA-2w-fm7">
+                                <rect key="frame" x="183" y="479" width="172" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-Sr-DVV">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="Quick alarm">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="quickSet:" destination="vna-gi-y4A" eventType="touchUpInside" id="v4a-eu-rJf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91J-Hg-7PE">
+                                        <rect key="frame" x="122" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="J3W-AF-oeA"/>
+                                            <constraint firstAttribute="height" constant="50" id="rIw-s8-nfV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" image="IconQuickAlarm_Normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="quickSet:" destination="vna-gi-y4A" eventType="touchUpInside" id="WRU-BV-dBQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="dXh-7Q-GF1"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="di6-YO-W9e" firstAttribute="centerY" secondItem="T15-lQ-D6M" secondAttribute="centerY" id="4jq-Ky-d7Y"/>
+                            <constraint firstItem="E7z-hL-qiO" firstAttribute="trailing" secondItem="nl6-hv-VWG" secondAttribute="trailing" id="CTT-yh-hht"/>
+                            <constraint firstItem="E7z-hL-qiO" firstAttribute="trailing" secondItem="5QA-2w-fm7" secondAttribute="trailing" id="Df4-l3-jiI"/>
                             <constraint firstItem="dh8-nR-yph" firstAttribute="centerX" secondItem="iVM-4n-FfV" secondAttribute="centerX" id="E29-PS-xRg"/>
                             <constraint firstItem="iVM-4n-FfV" firstAttribute="top" secondItem="168-az-Ahy" secondAttribute="top" id="EKm-mY-bjl"/>
                             <constraint firstItem="dh8-nR-yph" firstAttribute="width" secondItem="iVM-4n-FfV" secondAttribute="width" id="Fup-8e-pQN"/>
                             <constraint firstItem="iVM-4n-FfV" firstAttribute="leading" secondItem="168-az-Ahy" secondAttribute="leading" id="JQ2-z6-Z3g"/>
                             <constraint firstItem="dh8-nR-yph" firstAttribute="centerY" secondItem="iVM-4n-FfV" secondAttribute="centerY" id="NDC-c1-k08"/>
+                            <constraint firstItem="E7z-hL-qiO" firstAttribute="top" secondItem="5QA-2w-fm7" secondAttribute="bottom" constant="20" id="P2z-wE-9bI"/>
                             <constraint firstItem="dh8-nR-yph" firstAttribute="height" secondItem="iVM-4n-FfV" secondAttribute="height" id="TDE-Xe-tJS"/>
                             <constraint firstItem="iVM-4n-FfV" firstAttribute="trailing" secondItem="WAe-Yo-ExU" secondAttribute="trailing" id="aMt-ue-f30"/>
                             <constraint firstItem="WAe-Yo-ExU" firstAttribute="bottom" secondItem="nl6-hv-VWG" secondAttribute="bottom" constant="60" id="afj-Pa-1ae"/>
+                            <constraint firstItem="T15-lQ-D6M" firstAttribute="width" secondItem="iVM-4n-FfV" secondAttribute="width" id="cLB-bv-gMm"/>
+                            <constraint firstItem="T15-lQ-D6M" firstAttribute="height" secondItem="iVM-4n-FfV" secondAttribute="height" id="cZR-cH-jBb"/>
+                            <constraint firstItem="nl6-hv-VWG" firstAttribute="top" secondItem="E7z-hL-qiO" secondAttribute="bottom" constant="20" id="eBQ-Cj-Phy"/>
+                            <constraint firstItem="T15-lQ-D6M" firstAttribute="centerX" secondItem="iVM-4n-FfV" secondAttribute="centerX" id="eKG-dJ-Qpg"/>
+                            <constraint firstItem="di6-YO-W9e" firstAttribute="centerX" secondItem="T15-lQ-D6M" secondAttribute="centerX" id="myR-if-FA7"/>
                             <constraint firstItem="WAe-Yo-ExU" firstAttribute="trailing" secondItem="nl6-hv-VWG" secondAttribute="trailing" constant="20" id="oUd-m0-9rs"/>
+                            <constraint firstItem="T15-lQ-D6M" firstAttribute="centerY" secondItem="iVM-4n-FfV" secondAttribute="centerY" id="otB-IB-ZJo"/>
                             <constraint firstAttribute="bottom" secondItem="iVM-4n-FfV" secondAttribute="bottom" id="pyh-uX-vHv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WAe-Yo-ExU"/>
@@ -240,13 +356,89 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="iconListGear_Normal" id="odG-oU-ofl"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addAlarmButton" destination="nl6-hv-VWG" id="ODn-mP-sFk"/>
-                        <outlet property="alarmListTableView" destination="dh8-nR-yph" id="Q8n-Zy-KWu"/>
+                        <outlet property="addAlarmButton" destination="nl6-hv-VWG" id="oGJ-1l-dnM"/>
+                        <outlet property="alarmListTableView" destination="dh8-nR-yph" id="SK6-rD-lzc"/>
+                        <outlet property="setAlarmStackView" destination="E7z-hL-qiO" id="cIw-On-QhE"/>
+                        <outlet property="setQuickAlarmStackView" destination="5QA-2w-fm7" id="aKd-ml-Mcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9h-x2-lrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-389.60000000000002" y="-1275.3694581280788"/>
+        </scene>
+        <!--Set Alarm View Controller-->
+        <scene sceneID="NLJ-eM-LH9">
+            <objects>
+                <viewController id="owU-7P-Y6x" customClass="SetAlarmViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRR-uf-3Sq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bgset1Rainy_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="ryO-CB-ScH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89v-tD-JaN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLr-AY-0GC">
+                                <rect key="frame" x="0.0" y="748" width="187.66666666666666" height="30"/>
+                                <state key="normal" title="Cancle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="owU-7P-Y6x" eventType="touchUpInside" id="Bx5-Ya-grr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4q-hV-5mN">
+                                <rect key="frame" x="187.66666666666663" y="748" width="187.33333333333337" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAlarm:" destination="owU-7P-Y6x" eventType="touchUpInside" id="eIZ-3M-OaB"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utY-bY-T4O">
+                                <rect key="frame" x="10" y="54" width="355" height="216"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="owU-7P-Y6x" id="08J-90-6dk"/>
+                                    <outlet property="delegate" destination="owU-7P-Y6x" id="bgi-Q0-NdM"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jJW-yH-s7M" firstAttribute="trailing" secondItem="v4q-hV-5mN" secondAttribute="trailing" id="0gf-o1-YPR"/>
+                            <constraint firstItem="ryO-CB-ScH" firstAttribute="trailing" secondItem="jJW-yH-s7M" secondAttribute="trailing" id="2DP-2z-LZR"/>
+                            <constraint firstItem="utY-bY-T4O" firstAttribute="top" secondItem="jJW-yH-s7M" secondAttribute="top" constant="10" id="62H-pH-8AZ"/>
+                            <constraint firstItem="89v-tD-JaN" firstAttribute="height" secondItem="ryO-CB-ScH" secondAttribute="height" id="69u-3L-Hrr"/>
+                            <constraint firstItem="jJW-yH-s7M" firstAttribute="bottom" secondItem="lLr-AY-0GC" secondAttribute="bottom" id="EjX-rb-eBZ"/>
+                            <constraint firstItem="v4q-hV-5mN" firstAttribute="leading" secondItem="lLr-AY-0GC" secondAttribute="trailing" id="FzJ-oZ-3f7"/>
+                            <constraint firstItem="89v-tD-JaN" firstAttribute="centerY" secondItem="ryO-CB-ScH" secondAttribute="centerY" id="KxG-qB-M2G"/>
+                            <constraint firstItem="v4q-hV-5mN" firstAttribute="top" secondItem="lLr-AY-0GC" secondAttribute="top" id="TYp-h6-5h8"/>
+                            <constraint firstItem="ryO-CB-ScH" firstAttribute="leading" secondItem="jJW-yH-s7M" secondAttribute="leading" id="Vte-H3-VqI"/>
+                            <constraint firstItem="ryO-CB-ScH" firstAttribute="top" secondItem="dRR-uf-3Sq" secondAttribute="top" id="YOJ-fw-AkK"/>
+                            <constraint firstItem="jJW-yH-s7M" firstAttribute="trailing" secondItem="utY-bY-T4O" secondAttribute="trailing" constant="10" id="eud-hI-pkK"/>
+                            <constraint firstItem="v4q-hV-5mN" firstAttribute="width" secondItem="lLr-AY-0GC" secondAttribute="width" id="ifp-VA-Koh"/>
+                            <constraint firstItem="89v-tD-JaN" firstAttribute="width" secondItem="ryO-CB-ScH" secondAttribute="width" id="meq-Gn-O2k"/>
+                            <constraint firstItem="89v-tD-JaN" firstAttribute="centerX" secondItem="ryO-CB-ScH" secondAttribute="centerX" id="pQE-ge-zal"/>
+                            <constraint firstItem="v4q-hV-5mN" firstAttribute="bottom" secondItem="lLr-AY-0GC" secondAttribute="bottom" id="pWv-0z-6tp"/>
+                            <constraint firstItem="lLr-AY-0GC" firstAttribute="leading" secondItem="jJW-yH-s7M" secondAttribute="leading" id="s57-gy-vaW"/>
+                            <constraint firstAttribute="bottom" secondItem="ryO-CB-ScH" secondAttribute="bottom" id="t1W-9w-rKA"/>
+                            <constraint firstItem="v4q-hV-5mN" firstAttribute="height" secondItem="lLr-AY-0GC" secondAttribute="height" id="zEN-kd-1ZM"/>
+                            <constraint firstItem="utY-bY-T4O" firstAttribute="leading" secondItem="jJW-yH-s7M" secondAttribute="leading" constant="10" id="zvX-6U-1SE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jJW-yH-s7M"/>
+                    </view>
+                    <connections>
+                        <outlet property="timePicker" destination="utY-bY-T4O" id="sDK-SH-IXb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nT6-6t-gDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472.80000000000001" y="-1275.3694581280788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hYN-68-xZ2">
@@ -270,12 +462,16 @@
     </scenes>
     <resources>
         <image name="Bgset1Rainy_Normal" width="234.33332824707031" height="416.66665649414062"/>
+        <image name="IconAlarmPlus_Normal" width="95" height="95"/>
         <image name="IconFabPlus_Normal" width="16" height="16"/>
         <image name="IconMoreVertical_Normal" width="6" height="26"/>
         <image name="IconQuickAlarm_Normal" width="13" height="22"/>
+        <image name="ImageTabBarIndicator_Normal" width="58" height="49"/>
+        <image name="ImageTabBarShadow_Normal" width="375" height="65"/>
         <image name="WeatherFilledColor11_Normal" width="1020" height="500"/>
         <image name="filled_icon-navi-01-dis.1_Normal" width="25" height="25"/>
         <image name="icon-navi-01-dis.2_Normal" width="72" height="72"/>
+        <image name="icon-navi-01-dis.3_Normal" width="22" height="22"/>
         <image name="iconListGear_Normal" width="40" height="40"/>
     </resources>
 </document>
