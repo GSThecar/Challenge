@@ -11,22 +11,30 @@ import UIKit
 class AlarmListTableViewCell: UITableViewCell {
     
     static let identifier = "AlarmListTableViewCell"
-
     
-    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var timeStatusBarView: UIView!
+    @IBOutlet weak var repeatStatusBarView: UIView!
     
+    @IBOutlet weak var meridiemLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    backgroundColor = UIColor.clear
-        bgView.layer.cornerRadius = bgView.frame.height / 10
+        backgroundColor = UIColor.clear
+        print(self, #function)
+        print(timeStatusBarView.frame.size)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         
     }
-
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        
+    }
+    
 }

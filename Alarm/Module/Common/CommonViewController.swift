@@ -10,12 +10,22 @@ import UIKit
 
 class CommonViewController: UIViewController {
     
+    var tokens = [NSObjectProtocol]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
     
+    func addObserver(name: Notification.Name, queue: OperationQueue = OperationQueue.main, using handler: @escaping (AlarmEntity) -> Void) {
+        let token = NotificationCenter.default.addObserver(forName: name, object: nil, queue: queue, using: { noti in
+            if let memo = noti.userInfo?["Alarm"] as? AlarmEntity {
+                handler(memo)
+            }
+        })
+        tokens.append(token)
+    }
     
     func setupUI() {
         // Override
@@ -27,6 +37,11 @@ class CommonViewController: UIViewController {
     
     deinit {
         // print("\(self) has deinitialized")
+        for token in tokens {
+            NotificationCenter.default.removeObserver(token)
+        }
+        
+        print(self, #function)
     }
     
 }

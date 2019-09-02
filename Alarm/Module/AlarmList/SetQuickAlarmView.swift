@@ -70,11 +70,13 @@ class SetQuickAlarmView: UIView {
     
     @IBAction func close(_ sender: Any) {
         
+        removeFromSuperview()
     }
     @IBAction func saveQuickAlarm(_ sender: Any) {
         guard let minutesStr = resultLabel.text else { return }
         let minutes = Double(minutesStr) ?? 0.0
         DataManager.shared.setQuickAlarm(timeInterver: minutes)
+        removeFromSuperview()
     }
     
     @IBAction func reset(_ sender: Any) {

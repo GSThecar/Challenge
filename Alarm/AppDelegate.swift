@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print("granted \(granted)")
         }
+        
         DataManager.shared.setup(modelName: "Alarm")
+        
         return true
     }
 
