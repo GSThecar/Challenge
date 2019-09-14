@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TAq-Gv-ANA">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alarm View Controller-->
+        <scene sceneID="Gzm-sH-QBY">
+            <objects>
+                <viewController id="TAq-Gv-ANA" customClass="AlarmViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NdA-SQ-QXh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-0p-Fmu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TAq-Gv-ANA" id="Udz-YV-CZY"/>
+                                    <outlet property="delegate" destination="TAq-Gv-ANA" id="oGl-db-avU"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me3-mJ-nRc">
+                                <rect key="frame" x="350" y="798" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QFr-0g-FWR"/>
+                                    <constraint firstAttribute="width" constant="44" id="ih0-N3-77z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d2f-0p-Fmu" firstAttribute="leading" secondItem="9ma-yI-1gT" secondAttribute="leading" id="4cZ-bV-0jH"/>
+                            <constraint firstItem="d2f-0p-Fmu" firstAttribute="top" secondItem="NdA-SQ-QXh" secondAttribute="top" id="NLg-8V-Gf3"/>
+                            <constraint firstItem="9ma-yI-1gT" firstAttribute="trailing" secondItem="me3-mJ-nRc" secondAttribute="trailing" constant="20" id="UdU-Fu-IOV"/>
+                            <constraint firstAttribute="bottom" secondItem="d2f-0p-Fmu" secondAttribute="bottom" id="Wla-ct-uIT"/>
+                            <constraint firstItem="d2f-0p-Fmu" firstAttribute="trailing" secondItem="9ma-yI-1gT" secondAttribute="trailing" id="nSI-eW-LIk"/>
+                            <constraint firstItem="9ma-yI-1gT" firstAttribute="bottom" secondItem="me3-mJ-nRc" secondAttribute="bottom" constant="20" id="vfA-w8-yvt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ma-yI-1gT"/>
+                    </view>
+                    <connections>
+                        <outlet property="alarmListTableView" destination="d2f-0p-Fmu" id="E7T-Pu-eWQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJP-aH-1QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172.46376811594203" y="1.3392857142857142"/>
+        </scene>
+    </scenes>
+</document>
