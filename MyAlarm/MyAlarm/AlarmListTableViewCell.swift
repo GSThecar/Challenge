@@ -16,7 +16,8 @@ class AlarmListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = UIColor.clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

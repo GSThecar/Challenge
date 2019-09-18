@@ -1,0 +1,8 @@
+platform :ios, '12.0'
+use_frameworks!
+
+target 'MyAlarm' do
+  pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'AFNetworking', '~> 3.0'
+end

@@ -8,16 +8,39 @@
 
 import UIKit
 
-class AlarmViewController: UIViewController {
+class AlarmListViewController: UIViewController {
 
     
     @IBOutlet weak var alarmListTableView: UITableView!
     
+    @IBOutlet weak var addAlarm: UIButton!
+    
+    
+    @IBAction func addAlarm(_ sender: Any) {
+        let view = AddAlarmView(frame: self.view.frame)
+        self.view.addSubview(view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        let image = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = image
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.tabBarController?.tabBar.backgroundImage = image
+        self.tabBarController?.tabBar.shadowImage = image
+        self.tabBarController?.tabBar.isTranslucent = true
+        
+        alarmListTableView.backgroundColor = UIColor.clear
+        
         let nib = UINib(nibName: AlarmListTableViewCell.identifier, bundle: nil)
         alarmListTableView.register(nib, forCellReuseIdentifier: AlarmListTableViewCell.identifier)
+        
+        addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
         
         // Do any additional setup after loading the view.
     }
@@ -34,7 +57,7 @@ class AlarmViewController: UIViewController {
     */
 
 }
-extension AlarmViewController: UITableViewDataSource {
+extension AlarmListViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -57,6 +80,4 @@ extension AlarmViewController: UITableViewDataSource {
         }
     }
 }
-extension AlarmViewController: UITableViewDelegate {
-    
-}
+
