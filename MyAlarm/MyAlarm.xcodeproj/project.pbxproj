@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6C3C020DD92E0FB231A5B9FF /* Pods_MyAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6263AE1B3B7BDF1B3836BEE /* Pods_MyAlarm.framework */; };
+		C038EF2C2334A03000CF4901 /* SleepMusicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */; };
+		C038EF2E2334A09700CF4901 /* TodayInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */; };
+		C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */; };
+		C03AF33E23337B8800E2D273 /* SetAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03AF33D23337B8800E2D273 /* SetAlarmView.xib */; };
 		C03B566B232BCC5B00BAFA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B566A232BCC5B00BAFA69 /* AppDelegate.swift */; };
 		C03B5670232BCC5B00BAFA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B566E232BCC5B00BAFA69 /* Main.storyboard */; };
 		C03B5672232BCC5C00BAFA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03B5671232BCC5C00BAFA69 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		BEB9255B85024D7B9C8D282A /* Pods-MyAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.debug.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.debug.xcconfig"; sourceTree = "<group>"; };
+		C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMusicCollectionViewController.swift; sourceTree = "<group>"; };
+		C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInformationTableViewController.swift; sourceTree = "<group>"; };
+		C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmView.swift; sourceTree = "<group>"; };
+		C03AF33D23337B8800E2D273 /* SetAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetAlarmView.xib; sourceTree = "<group>"; };
 		C03B5667232BCC5B00BAFA69 /* MyAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B566A232BCC5B00BAFA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03B566F232BCC5B00BAFA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 				C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */,
 				C03B568A232F543200BAFA69 /* AddAlarmView.swift */,
 				C03B568C232F544500BAFA69 /* AddAlarmView.xib */,
+				C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */,
+				C03AF33D23337B8800E2D273 /* SetAlarmView.xib */,
+				C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */,
+				C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */,
 			);
 			path = MyAlarm;
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 				C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */,
 				C03B5675232BCC5C00BAFA69 /* LaunchScreen.storyboard in Resources */,
 				C03B5672232BCC5C00BAFA69 /* Assets.xcassets in Resources */,
+				C03AF33E23337B8800E2D273 /* SetAlarmView.xib in Resources */,
 				C03B5670232BCC5B00BAFA69 /* Main.storyboard in Resources */,
 				C03B5689232D0DA500BAFA69 /* AlarmListTableViewCell.xib in Resources */,
 			);
@@ -222,8 +235,11 @@
 			files = (
 				C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */,
 				C03B567D232C990C00BAFA69 /* Model.swift in Sources */,
+				C038EF2E2334A09700CF4901 /* TodayInformationTableViewController.swift in Sources */,
+				C038EF2C2334A03000CF4901 /* SleepMusicCollectionViewController.swift in Sources */,
 				C03B566B232BCC5B00BAFA69 /* AppDelegate.swift in Sources */,
 				C03B5685232D0D3E00BAFA69 /* AlarmListViewController.swift in Sources */,
+				C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */,
 				C03B5688232D0DA500BAFA69 /* AlarmListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

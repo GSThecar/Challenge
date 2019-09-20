@@ -9,6 +9,7 @@
 import UIKit
 
 class AddAlarmView: UIView {
+    var vc: AlarmListViewController?
     
     @IBOutlet weak var quickAlarm: UIButton!
     @IBOutlet weak var alarm: UIButton!
@@ -32,7 +33,12 @@ class AddAlarmView: UIView {
     }
     
     @IBAction func addAlarm(_ sender: Any) {
-         
+         let setAlarmView = SetAlarmView(frame: self.bounds)
+        setAlarmView.vc = vc
+        self.isHidden = true
+        vc?.navigationController?.navigationBar.isHidden = self.isHidden
+        vc?.tabBarController?.tabBar.isHidden = self.isHidden
+        vc?.view.addSubview(setAlarmView)
     }
     @IBAction func cancle(_ sender: Any) {
         self.removeFromSuperview()

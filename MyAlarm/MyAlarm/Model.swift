@@ -10,6 +10,6 @@ import Foundation
 import RealmSwift
 
 class Alarm: Object {
-    @objc dynamic var alarm: Date?
+  @objc dynamic var alarm: Date?
 }
 

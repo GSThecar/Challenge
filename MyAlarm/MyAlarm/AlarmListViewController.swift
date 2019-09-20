@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AlarmListViewController: UIViewController {
-
+    let dateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.timeStyle = .short
+        return f
+    }()
+    
+    var list: Results<Alarm>?
     
     @IBOutlet weak var alarmListTableView: UITableView!
     
@@ -18,13 +25,12 @@ class AlarmListViewController: UIViewController {
     
     @IBAction func addAlarm(_ sender: Any) {
         let view = AddAlarmView(frame: self.view.frame)
+        view.vc = self
         self.view.addSubview(view)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         
         let image = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
@@ -41,30 +47,21 @@ class AlarmListViewController: UIViewController {
         alarmListTableView.register(nib, forCellReuseIdentifier: AlarmListTableViewCell.identifier)
         
         addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
-        
         // Do any additional setup after loading the view.
+        let realm = try! Realm()
+        list = realm.objects(Alarm.self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-extension AlarmListViewController: UITableViewDataSource, UITableViewDelegate {
+extension AlarmListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            guard let list = list else { return 0}
+            return list.count
         default:
             return 0
         }
@@ -73,11 +70,34 @@ extension AlarmListViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.identifier, for: indexPath) as! AlarmListTableViewCell
-            cell.timeLabel.text = "00:00"
+            if let list = list {
+                let target = list[indexPath.row].alarm
+                cell.timeLabel.text = dateFormatter.string(for: target)
+            }
             return cell
         default:
             fatalError()
         }
+    }
+}
+
+extension AlarmListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        if let target = list?[indexPath.row] {
+            let realm = try! Realm()
+           try! realm.write {
+                realm.delete(target)
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
     }
 }
 
