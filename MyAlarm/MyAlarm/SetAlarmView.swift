@@ -8,12 +8,14 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 class SetAlarmView: UIView {
     var vc : AlarmListViewController?
     
     @IBOutlet weak var datePickerView: UIDatePicker!
     
+    @IBOutlet weak var repeatSwitch: UISwitch!
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -36,6 +38,23 @@ class SetAlarmView: UIView {
     @IBAction func setAndSave(_ sender: Any) {
         let newAlarm = Alarm()
         newAlarm.alarm = datePickerView.date
+        //set
+        let content = UNMutableNotificationContent()
+        content.title = "Alarm"
+        content.body = "The alarm ⏰ is going off! Wake up!"
+        content.sound = .none
+
+        let dateComponent = Calendar.current.dateComponents([.hour, .minute], from: datePickerView.date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: repeatSwitch.isOn)
+        let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("Set Alarm Done")
+            }
+        }
+        //save
         let realm = try! Realm()
         try! realm.write {
             realm.add(newAlarm)

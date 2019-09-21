@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetAlarmView" customModule="MyAlarm" customModuleProvider="target">
             <connections>
                 <outlet property="datePickerView" destination="lUv-v7-1Nb" id="eLw-SP-Pep"/>
+                <outlet property="repeatSwitch" destination="Fpy-1e-CQ7" id="E3n-rp-p96"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,23 +30,38 @@
                 </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1J-FA-paP">
                     <rect key="frame" x="0.0" y="832" width="207" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="취소"/>
                     <connections>
                         <action selector="close:" destination="-1" eventType="touchUpInside" id="4fl-jX-RcZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-hL-W8p">
                     <rect key="frame" x="207" y="832" width="207" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="설정"/>
                     <connections>
                         <action selector="setAndSave:" destination="-1" eventType="touchUpInside" id="f7H-Op-l9f"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n4v-lX-gLM">
+                    <rect key="frame" x="158" y="586" width="98.5" height="31"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반복" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjR-2d-WYx">
+                            <rect key="frame" x="0.0" y="0.0" width="29.5" height="31"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fpy-1e-CQ7">
+                            <rect key="frame" x="49.5" y="0.0" width="51" height="31"/>
+                        </switch>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="A1J-FA-paP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7AZ-jU-02Z"/>
                 <constraint firstItem="lUv-v7-1Nb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9SY-kd-Lcw"/>
+                <constraint firstItem="n4v-lX-gLM" firstAttribute="top" secondItem="lUv-v7-1Nb" secondAttribute="bottom" constant="30" id="9or-0v-2YU"/>
                 <constraint firstItem="Ad1-hL-W8p" firstAttribute="leading" secondItem="A1J-FA-paP" secondAttribute="trailing" id="OHX-yO-Gs7"/>
                 <constraint firstItem="Ad1-hL-W8p" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UJB-l1-qat"/>
                 <constraint firstItem="A1J-FA-paP" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Va2-rZ-buZ"/>
@@ -53,6 +69,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ad1-hL-W8p" secondAttribute="trailing" id="edH-Yg-C2V"/>
                 <constraint firstItem="A1J-FA-paP" firstAttribute="width" secondItem="Ad1-hL-W8p" secondAttribute="width" id="n18-tb-By3"/>
                 <constraint firstItem="lUv-v7-1Nb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nlF-Dq-eVX"/>
+                <constraint firstItem="n4v-lX-gLM" firstAttribute="centerX" secondItem="lUv-v7-1Nb" secondAttribute="centerX" id="ziQ-WH-lkE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
