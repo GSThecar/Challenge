@@ -25,6 +25,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMi-1R-ivk">
+                        <rect key="frame" x="85" y="5" width="75" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="xyi-EH-IN2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="2d6-i1-UxI"/>
@@ -34,8 +38,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="alarmImageView" destination="lMi-1R-ivk" id="Xvx-mv-qqp"/>
                 <outlet property="timeLabel" destination="xyi-EH-IN2" id="FRk-Hm-qXJ"/>
             </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
 </document>

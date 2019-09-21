@@ -12,6 +12,7 @@ class AlarmListTableViewCell: UITableViewCell {
     
     static let identifier = "AlarmListTableViewCell"
 
+    @IBOutlet weak var alarmImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {

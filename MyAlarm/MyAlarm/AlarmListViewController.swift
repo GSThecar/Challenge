@@ -49,6 +49,7 @@ class AlarmListViewController: UIViewController {
         addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
         // Do any additional setup after loading the view.
         let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         list = realm.objects(Alarm.self)
     }
     
@@ -71,8 +72,16 @@ extension AlarmListViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.identifier, for: indexPath) as! AlarmListTableViewCell
             if let list = list {
-                let target = list[indexPath.row].alarm
-                cell.timeLabel.text = dateFormatter.string(for: target)
+                let target = list[indexPath.row]
+                cell.timeLabel.text = dateFormatter.string(for: target.alarm)
+                if let name = target.name {
+                    switch name {
+                    case "Alarm":
+                        cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
+                    default:
+                        cell.alarmImageView.image = UIImage(named: "IconQuickAlarm_Normal", in: .main, compatibleWith: nil)
+                    }
+                }
             }
             return cell
         default:

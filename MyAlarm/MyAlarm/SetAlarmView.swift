@@ -11,7 +11,7 @@ import RealmSwift
 import UserNotifications
 
 class SetAlarmView: UIView {
-    var vc : AlarmListViewController?
+    weak var vc : AlarmListViewController?
     
     @IBOutlet weak var datePickerView: UIDatePicker!
     
@@ -37,6 +37,7 @@ class SetAlarmView: UIView {
     
     @IBAction func setAndSave(_ sender: Any) {
         let newAlarm = Alarm()
+        newAlarm.name = "Alarm"
         newAlarm.alarm = datePickerView.date
         //set
         let content = UNMutableNotificationContent()
