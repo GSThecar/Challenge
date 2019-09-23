@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SleepMusicViewController: UIViewController, UICollectionViewDelegateFlowLayout {
-
+    
     let imageList = [ "ImageThumbnail_3809446568_Normal", "ImageThumbnail_3584004629_Normal", "ImageThumbnail_3563995743_Normal", "ImageThumbnail_1780940859_Normal", "ImageThumbnail_1592326657_Normal", "ImageThumbnail_4056444929_Normal", "ImageThumbnail_3772789657_Normal", "ImageThumbnail_3084127194_Normal", "ImageThumbnail_3371831658_Normal", "ImageThumbnail_188854531_Normal", "ImageThumbnail_1684937011_Normal" ]
     let nameList = [ "가벼운 비", "거센 비", "보통 비", "숲 1", "숲 속 강가", "벽난로", "파도", "심장 박동", "커피샵", "베타파", "알파파" ]
+    var musicPlayer: AVAudioPlayer?
     
     @IBOutlet weak var musicListCollectionView: UICollectionView!
+    @IBOutlet weak var thumbNailImageView: UIImageView!
+    @IBOutlet weak var tumbNailNameLabel: UILabel!
+    @IBOutlet weak var musicPlayTimeLabel: UILabel!
+    @IBOutlet weak var musicPlayButton: UIButton!
+    @IBOutlet weak var musicPauseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         musicListCollectionView.backgroundColor = UIColor.black
         
         let layout = UICollectionViewFlowLayout()
@@ -26,11 +33,21 @@ class SleepMusicViewController: UIViewController, UICollectionViewDelegateFlowLa
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         musicListCollectionView.setCollectionViewLayout(layout, animated: true)
         
-        
     }
     
-
-
+    @IBAction func playMusic(_ sender: Any) {
+        guard let player = musicPlayer else { return }
+        player.play()
+        musicPlayButton.isHidden = true
+        musicPauseButton.isHidden = false
+    }
+    
+    @IBAction func pauseMusic(_ sender: Any) {
+        musicPlayer?.stop()
+        musicPlayButton.isHidden = false
+        musicPauseButton.isHidden = true
+    }
+    
 }
 
 extension SleepMusicViewController: UICollectionViewDataSource {
@@ -49,5 +66,21 @@ extension SleepMusicViewController: UICollectionViewDataSource {
 }
 
 extension SleepMusicViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        thumbNailImageView.image = UIImage(named: imageList[indexPath.row])
+        tumbNailNameLabel.text = nameList[indexPath.row]
+        
+        if let path = Bundle.main.path(forResource: "Sunshine.mp3", ofType: nil) {
+            let url = URL(fileURLWithPath: path)
+            do {
+             musicPlayer = try AVAudioPlayer(contentsOf: url)
+                musicPlayer?.numberOfLoops = Int.max
+                musicPlayButton.isHidden = true
+                musicPauseButton.isHidden = false
+                musicPlayer?.play()
+            } catch {
+                
+            }
+        }
+    }
 }
