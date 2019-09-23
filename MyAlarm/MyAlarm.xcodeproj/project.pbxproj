@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C3C020DD92E0FB231A5B9FF /* Pods_MyAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6263AE1B3B7BDF1B3836BEE /* Pods_MyAlarm.framework */; };
-		C038EF2C2334A03000CF4901 /* SleepMusicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */; };
+		C008504D2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */; };
+		C008504F2338FAA600D624F9 /* SleepMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */; };
 		C038EF2E2334A09700CF4901 /* TodayInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */; };
 		C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */; };
 		C03AF33E23337B8800E2D273 /* SetAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03AF33D23337B8800E2D273 /* SetAlarmView.xib */; };
@@ -28,7 +29,8 @@
 
 /* Begin PBXFileReference section */
 		BEB9255B85024D7B9C8D282A /* Pods-MyAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.debug.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.debug.xcconfig"; sourceTree = "<group>"; };
-		C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMusicCollectionViewController.swift; sourceTree = "<group>"; };
+		C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMusicCollectionViewCell.swift; sourceTree = "<group>"; };
+		C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMusicViewController.swift; sourceTree = "<group>"; };
 		C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInformationTableViewController.swift; sourceTree = "<group>"; };
 		C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmView.swift; sourceTree = "<group>"; };
 		C03AF33D23337B8800E2D273 /* SetAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetAlarmView.xib; sourceTree = "<group>"; };
@@ -105,10 +107,11 @@
 				C03B568C232F544500BAFA69 /* AddAlarmView.xib */,
 				C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */,
 				C03AF33D23337B8800E2D273 /* SetAlarmView.xib */,
-				C038EF2B2334A03000CF4901 /* SleepMusicCollectionViewController.swift */,
 				C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */,
 				C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */,
 				C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */,
+				C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */,
+				C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */,
 			);
 			path = MyAlarm;
 			sourceTree = "<group>";
@@ -240,10 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C008504F2338FAA600D624F9 /* SleepMusicViewController.swift in Sources */,
+				C008504D2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift in Sources */,
 				C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */,
 				C03B567D232C990C00BAFA69 /* Model.swift in Sources */,
 				C038EF2E2334A09700CF4901 /* TodayInformationTableViewController.swift in Sources */,
-				C038EF2C2334A03000CF4901 /* SleepMusicCollectionViewController.swift in Sources */,
 				C03B566B232BCC5B00BAFA69 /* AppDelegate.swift in Sources */,
 				C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */,
 				C03B5685232D0D3E00BAFA69 /* AlarmListViewController.swift in Sources */,
