@@ -12,11 +12,14 @@ class SleepMusicCollectionViewCell: UICollectionViewCell {
     static let identifier = "SleepMusicCollectionViewCell"
     
     @IBOutlet weak var musicImageView: UIImageView!
-    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var musicNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        indicator.hidesWhenStopped = true
+        indicator.stopAnimating()
+        indicator.color = UIColor.white
         musicImageView.layer.cornerRadius = musicImageView.bounds.height / 2
         musicNameLabel.textColor = UIColor.white
     }

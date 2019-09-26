@@ -211,18 +211,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xT1-s2-Kdn">
+                                                    <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Re3-YM-1Sf" firstAttribute="top" secondItem="OvP-n0-ryT" secondAttribute="top" id="19r-3D-cMo"/>
                                                 <constraint firstItem="Re3-YM-1Sf" firstAttribute="leading" secondItem="OvP-n0-ryT" secondAttribute="leading" id="3N8-KT-DZm"/>
+                                                <constraint firstItem="xT1-s2-Kdn" firstAttribute="centerY" secondItem="Re3-YM-1Sf" secondAttribute="centerY" id="53p-Bk-DlL"/>
                                                 <constraint firstItem="Upe-tu-vUP" firstAttribute="top" secondItem="Re3-YM-1Sf" secondAttribute="bottom" id="6au-DF-9a0"/>
                                                 <constraint firstAttribute="trailing" secondItem="Re3-YM-1Sf" secondAttribute="trailing" id="7uS-dj-K0A"/>
                                                 <constraint firstItem="Upe-tu-vUP" firstAttribute="bottom" secondItem="OvP-n0-ryT" secondAttribute="bottom" id="bIg-BX-B2O"/>
+                                                <constraint firstItem="xT1-s2-Kdn" firstAttribute="centerX" secondItem="Re3-YM-1Sf" secondAttribute="centerX" id="gf4-WD-Va1"/>
                                                 <constraint firstItem="Upe-tu-vUP" firstAttribute="leading" secondItem="Re3-YM-1Sf" secondAttribute="leading" id="kFD-7L-FQ6"/>
                                                 <constraint firstItem="Upe-tu-vUP" firstAttribute="trailing" secondItem="Re3-YM-1Sf" secondAttribute="trailing" id="oo4-Oe-gE2"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="indicator" destination="xT1-s2-Kdn" id="Taf-RJ-T6m"/>
                                             <outlet property="musicImageView" destination="Re3-YM-1Sf" id="Qw0-Gh-0TR"/>
                                             <outlet property="musicNameLabel" destination="Upe-tu-vUP" id="Kpo-t1-Pkp"/>
                                         </connections>
