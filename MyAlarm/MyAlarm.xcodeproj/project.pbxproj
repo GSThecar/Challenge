@@ -26,6 +26,8 @@
 		C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B568C232F544500BAFA69 /* AddAlarmView.xib */; };
 		C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */; };
 		C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */; };
+		C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */; };
+		C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C03B568C232F544500BAFA69 /* AddAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlarmView.xib; sourceTree = "<group>"; };
 		C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetQuickAlarmView.swift; sourceTree = "<group>"; };
 		C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetQuickAlarmView.xib; sourceTree = "<group>"; };
+		C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		D3B8D99FF53ADF864BEE92B1 /* Pods-MyAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.release.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.release.xcconfig"; sourceTree = "<group>"; };
 		D6263AE1B3B7BDF1B3836BEE /* Pods_MyAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 				C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */,
 				C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */,
 				C022C9ED23393572001975F6 /* Sunshine.mp3 */,
+				C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */,
+				C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */,
 			);
 			path = MyAlarm;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */,
 				C008504F2338FAA600D624F9 /* SleepMusicViewController.swift in Sources */,
 				C008504D2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift in Sources */,
 				C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */,
@@ -257,6 +264,7 @@
 				C03B5685232D0D3E00BAFA69 /* AlarmListViewController.swift in Sources */,
 				C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */,
 				C03B5688232D0DA500BAFA69 /* AlarmListTableViewCell.swift in Sources */,
+				C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,16 +411,17 @@
 			baseConfigurationReference = BEB9255B85024D7B9C8D282A /* Pods-MyAlarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93P8MMPUWH;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9798FKV9BN;
 				INFOPLIST_FILE = MyAlarm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.GSThecar.MyAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.GSThecarMyAlarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyAlarm;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -423,16 +432,17 @@
 			baseConfigurationReference = D3B8D99FF53ADF864BEE92B1 /* Pods-MyAlarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93P8MMPUWH;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9798FKV9BN;
 				INFOPLIST_FILE = MyAlarm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.GSThecar.MyAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.GSThecarMyAlarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyAlarm;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

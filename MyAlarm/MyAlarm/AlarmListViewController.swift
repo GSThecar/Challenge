@@ -51,6 +51,7 @@ class AlarmListViewController: UIViewController {
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         list = realm.objects(Alarm.self)
+        
     }
     
 }
