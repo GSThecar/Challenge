@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import CoreLocation
 
 class AlarmListViewController: UIViewController {
     let dateFormatter: DateFormatter = {
@@ -17,6 +18,12 @@ class AlarmListViewController: UIViewController {
     }()
     
     var list: Results<Alarm>?
+    
+   lazy var locationManager: CLLocationManager = {
+        let m = CLLocationManager()
+        m.delegate = self
+        return m
+    }()
     
     @IBOutlet weak var alarmListTableView: UITableView!
     
@@ -52,6 +59,20 @@ class AlarmListViewController: UIViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         list = realm.objects(Alarm.self)
         
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedWhenInUse, .authorizedAlways:
+                updateCurrentLocation()
+            case .denied, .restricted:
+                show(message: "위치서비스 사용불가")
+            default:
+                break
+            }
+        } else {
+            show(message: "위치 사용 불가")
+        }
     }
     
 }
@@ -111,3 +132,32 @@ extension AlarmListViewController: UITableViewDelegate {
     }
 }
 
+extension AlarmListViewController: CLLocationManagerDelegate {
+    func updateCurrentLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            WeatherData.shared.fetchLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude) {
+                print(location)
+            }
+        }
+        manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            updateCurrentLocation()
+        default:
+            break
+        }
+    }
+    
+}

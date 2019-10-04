@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class WeatherData {
     static let shared = WeatherData()
@@ -16,7 +17,28 @@ class WeatherData {
     var weather: Weather?
     var forecast: Forecast?
     
-    func fetchLocation(lat: Double, lon: Double, completion: @escaping () -> () ) {
+    let group = DispatchGroup()
+    let workQueue = DispatchQueue(label: "apiQueue", attributes: .concurrent)
+    
+    func fetch( locationKey: String, completion: @escaping () -> () ) {
+        group.enter()
+        workQueue.async {
+            self.fetchWeather(locationKey: locationKey, completion: {
+                self.group.leave()
+            })
+        }
+        group.enter()
+        workQueue.async {
+            self.fetchForecast(locationKey: locationKey, completion: {
+                self.group.leave()
+            })
+        }
+        group.notify(queue: DispatchQueue.main) {
+            completion()
+        }
+    }
+    
+    func fetchLocation( lat: Double, lon: Double, completion: @escaping () -> () ) {
         let locURLStr = "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=\(apiKey)&q=\(lat),\(lon)&language=ko&details=false&toplevel=false"
         guard let locURL = URL(string: locURLStr) else {
             print("Invalid URL")

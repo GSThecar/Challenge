@@ -45,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>사용자의 위치를 기반으로 날씨정보를 얻습니다</string>
 </dict>
 </plist>
