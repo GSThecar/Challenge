@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Alamofire
 
 class WeatherData {
     static let shared = WeatherData()
@@ -40,82 +41,27 @@ class WeatherData {
     
     func fetchLocation( lat: Double, lon: Double, completion: @escaping () -> () ) {
         let locURLStr = "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=\(apiKey)&q=\(lat),\(lon)&language=ko&details=false&toplevel=false"
-        guard let locURL = URL(string: locURLStr) else {
-            print("Invalid URL")
-            return
-        }
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: locURL) { [weak self] (data, response, error) in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
+        AF.request(locURLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil, interceptor: nil).validate(statusCode: 200..<300).responseData { (response) in
+            if let data = response.data {
+                do {
+                    let decoder = JSONDecoder()
+                    self.location = try decoder.decode(Location.self, from: data)
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid Response")
-                return
-            }
-            
-            guard (200...299).contains(httpResponse.statusCode) else {
-                print(httpResponse.statusCode)
-                return
-            }
-            
-            guard let data = data else {
-                print("Invalid Data")
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                self?.location = try decoder.decode(Location.self, from: data)
-            } catch {
-                print(error.localizedDescription)
-            }
+            completion()
         }
-        task.resume()
     }
     
     func fetchWeather( locationKey: String ,completion: @escaping () -> () ) {
         let weatherURLStr = "https://dataservice.accuweather.com/currentconditions/v1/\(locationKey)?apikey=\(apiKey)&language=ko&details=true"
-        guard let locURL = URL(string: weatherURLStr) else {
-            print("Invalid URL")
-            return
-        }
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: locURL) { [weak self] (data, response, error) in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
-                }
-            }
-            if let error = error {
-                print(error)
+        AF.request(weatherURLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil, interceptor: nil).validate(statusCode: 200..<300).responseData { (response) in
+            guard let data = response.data else {
+                print("Invalid Data")
                 return
             }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid Response")
-                return
-            }
-            
-            guard (200...299).contains(httpResponse.statusCode) else {
-                print(httpResponse.statusCode)
-                return
-            }
-            
-            guard let data = data else {
-                print("Invalid DATA")
-                return
-            }
-            
             do {
                 guard let jsonArray = try JSONSerialization.jsonObject(with: data) as? [[String:Any]] else { return }
                 var weather = Weather()
@@ -141,56 +87,29 @@ class WeatherData {
                         weather.tempDeparture = metricTemp
                     }
                 }
-                self?.weather = weather
+                self.weather = weather
                 
             } catch {
                 print(error.localizedDescription)
             }
+            completion()
         }
-        task.resume()
     }
     
     func fetchForecast( locationKey: String ,completion: @escaping () -> () ) {
-        let locURLStr = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/\(locationKey)?apikey=xx6RZJkByUtvInLx1vwPQ18XenCuZLLA&language=ko&details=false&metric=true"
+        let forecastURLStr = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/\(locationKey)?apikey=xx6RZJkByUtvInLx1vwPQ18XenCuZLLA&language=ko&details=false&metric=true"
         
-        
-        let locURL = URL(string: locURLStr)!
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: locURL) { (data, response, error) in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
+        AF.request(forecastURLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil, interceptor: nil).validate(statusCode: 200..<300).responseJSON { (response) in
+            if let data = response.data {
+                do {
+                    let decoder = JSONDecoder()
+                    self.forecast = try decoder.decode(Forecast.self, from: data)
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid Response")
-                return
-            }
-            
-            guard (200...299).contains(httpResponse.statusCode) else {
-                print(httpResponse.statusCode)
-                return
-            }
-            
-            guard let data = data else {
-                print("Invalid Data")
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                self.forecast = try decoder.decode(Forecast.self, from: data)
-            } catch {
-                print(error.localizedDescription)
-            }
+            completion()
         }
-        task.resume()
     }
 }
 

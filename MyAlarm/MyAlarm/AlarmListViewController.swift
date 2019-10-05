@@ -19,7 +19,7 @@ class AlarmListViewController: UIViewController {
     
     var list: Results<Alarm>?
     
-   lazy var locationManager: CLLocationManager = {
+    lazy var locationManager: CLLocationManager = {
         let m = CLLocationManager()
         m.delegate = self
         return m
@@ -123,7 +123,7 @@ extension AlarmListViewController: UITableViewDelegate {
         guard editingStyle == .delete else { return }
         if let target = list?[indexPath.row] {
             let realm = try! Realm()
-           try! realm.write {
+            try! realm.write {
                 realm.delete(target)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -139,6 +139,7 @@ extension AlarmListViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
+            
             WeatherData.shared.fetchLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude) {
                 print(location)
             }
