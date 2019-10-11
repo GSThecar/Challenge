@@ -74,7 +74,9 @@ class AlarmListViewController: UIViewController {
             show(message: "위치 사용 불가")
         }
     }
-    
+    deinit {
+        print(self, #function)
+    }
 }
 extension AlarmListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,7 +85,7 @@ extension AlarmListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            guard let list = list else { return 0}
+            guard let list = list else { return 0 }
             return list.count
         default:
             return 0

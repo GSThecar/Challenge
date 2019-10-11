@@ -108,5 +108,7 @@ class TodayInformationTableViewController: UITableViewController {
             fatalError("Inavalid Cell")
         }
     }
-    
+    deinit {
+        print(self, #function)
+    }
 }

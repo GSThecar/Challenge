@@ -27,6 +27,7 @@
 		C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B568C232F544500BAFA69 /* AddAlarmView.xib */; };
 		C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */; };
 		C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */; };
+		C0775383234F1E47003004E1 /* VocieMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0775382234F1E47003004E1 /* VocieMemoViewController.swift */; };
 		C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */; };
 		C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +46,7 @@
 		C03B566F232BCC5B00BAFA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C03B5671232BCC5C00BAFA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C03B5674232BCC5C00BAFA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C03B5676232BCC5C00BAFA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C03B5676232BCC5C00BAFA69 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		C03B567C232C990C00BAFA69 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C03B5684232D0D3E00BAFA69 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		C03B5686232D0DA500BAFA69 /* AlarmListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewCell.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		C03B568C232F544500BAFA69 /* AddAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlarmView.xib; sourceTree = "<group>"; };
 		C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetQuickAlarmView.swift; sourceTree = "<group>"; };
 		C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetQuickAlarmView.xib; sourceTree = "<group>"; };
+		C0775382234F1E47003004E1 /* VocieMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocieMemoViewController.swift; sourceTree = "<group>"; };
 		C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		D3B8D99FF53ADF864BEE92B1 /* Pods-MyAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.release.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 				C03B566E232BCC5B00BAFA69 /* Main.storyboard */,
 				C03B5671232BCC5C00BAFA69 /* Assets.xcassets */,
 				C03B5673232BCC5C00BAFA69 /* LaunchScreen.storyboard */,
-				C03B5676232BCC5C00BAFA69 /* Info.plist */,
+				C03B5676232BCC5C00BAFA69 /* info.plist */,
 				C03B567C232C990C00BAFA69 /* Model.swift */,
 				C03B5684232D0D3E00BAFA69 /* AlarmListViewController.swift */,
 				C03B5686232D0DA500BAFA69 /* AlarmListTableViewCell.swift */,
@@ -124,6 +126,7 @@
 				C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */,
 				C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */,
 				C01E9BE92349DBA80020BA62 /* AlarmModalViewController.swift */,
+				C0775382234F1E47003004E1 /* VocieMemoViewController.swift */,
 			);
 			path = MyAlarm;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C03B5685232D0D3E00BAFA69 /* AlarmListViewController.swift in Sources */,
 				C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */,
 				C03B5688232D0DA500BAFA69 /* AlarmListTableViewCell.swift in Sources */,
+				C0775383234F1E47003004E1 /* VocieMemoViewController.swift in Sources */,
 				C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

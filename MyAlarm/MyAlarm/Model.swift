@@ -18,7 +18,7 @@ class Alarm: Object {
 
 
 
-//let dropBoxToken = "ZzXIFEHKkAAAAAAAAAAAF-tuGvovER9D5PgC3R-2eqgvH8AJywEAPLRRNTlD3xh6"
+let dropBoxToken = "ZzXIFEHKkAAAAAAAAAAAJLtyTds9CgKzVnt7TlT_7Vp_lvrgyamfsubO4ZIt0tG_"
 let apiKey = "xx6RZJkByUtvInLx1vwPQ18XenCuZLLA"
 
 struct Location: Codable {
@@ -70,3 +70,22 @@ struct Weather {
     var tempDeparture: Double?
 }
 
+struct MemoList: Codable {
+    struct Entries: Codable {
+        let name: String
+        let client_modified: String
+    }
+    var entries: [Entries]
+}
+struct ListParameter: Codable{
+    let path = ""
+    let recursive = false
+    let include_media_info = false
+    let include_deleted = false
+    let include_has_explicit_shared_members = false
+    let include_mounted_folders = true
+    let include_non_downloadable_files = true
+}
+struct DeleteParameter: Codable {
+    let path: String
+}

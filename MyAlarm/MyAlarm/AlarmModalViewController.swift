@@ -17,7 +17,7 @@ class AlarmModalViewController: UIViewController {
         return f
     }()
     
-    var player: AVPlayer?
+    var player: AVAudioPlayer?
     
    @objc func close() {
         dismiss(animated: true, completion: nil)
@@ -25,8 +25,12 @@ class AlarmModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let path = Bundle.main.path(forResource: "Sunshine", ofType: "mp3") else { return }
-        self.player = AVPlayer(url: URL(fileURLWithPath: path))
+        guard let path = Bundle.main.path(forResource: "Sunshine", ofType: "mp3"), let url = URL(string: path) else { return }
+        do {
+            self.player = try AVAudioPlayer(contentsOf: url)
+        } catch {
+            print(error.localizedDescription)
+        }
         self.player?.play()
         
         let image = UIImage(named: "DumbBack")
@@ -85,32 +89,18 @@ class AlarmModalViewController: UIViewController {
         let height = NSLayoutConstraint(item: removeButton, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: 60)
         superView.addConstraints([bottom15Constraint, equalLeading, equalTrailing, height])
         
-//        let musicUrl = URL(fileURLWithPath: "Sunshine.mp3")
-//            do {
-//                let player = try AVAudioPlayer(contentsOf: <#T##URL#>, fileTypeHint: "mp3")
-//                player.numberOfLoops = 100
-//                player.play()
-//
-//            }
-//            catch {
-//                print(error.localizedDescription)
-//            }
-            
-        
-        
-        
-        // Do any additional setup after loading the view.
+        let musicUrl = URL(fileURLWithPath: "Sunshine.mp3")
+            do {
+                let player = try AVAudioPlayer(contentsOf: musicUrl, fileTypeHint: "mp3")
+                player.numberOfLoops = 100
+                player.play()
+            }
+            catch {
+                print(error.localizedDescription)
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit {
+        print(self, #function)
     }
-    */
 
 }

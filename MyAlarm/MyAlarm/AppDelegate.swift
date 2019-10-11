@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import RealmSwift
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //permission
+        //notification
         UNUserNotificationCenter.current().requestAuthorization(options: [UNAuthorizationOptions.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 UNUserNotificationCenter.current().delegate = self
                 print("granted \(granted)")
             }
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+        } catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
         }
         
         let config = Realm.Configuration(
@@ -36,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         _ = try! Realm()
         
-        // Override point for customization after application launch.
+        
+        
         return true
     }
     
