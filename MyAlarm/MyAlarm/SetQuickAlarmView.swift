@@ -70,14 +70,18 @@ class SetQuickAlarmView: UIView {
     @IBAction func reset(_ sender: Any) {
         resultLabel.text! = "0"
     }
+    
     @IBAction func setAndSave(_ sender: Any) {
-        guard let resultStr = resultLabel.text else { return }
-        guard let result = Double(resultStr) else { return }
+        guard let resultStr = resultLabel.text, let result = Double(resultStr) else { return }
+        guard result != 0 else { return }
+        
         let date = Date(timeIntervalSinceNow: result * 60 )
         let content = UNMutableNotificationContent()
         content.title = "Alarm"
         content.body = "The alarm ⏰ is going off! Wake up!"
-        content.sound = .none
+        let soundName = UNNotificationSoundName(rawValue: "Sunshine_1.mp3")
+        let sound = UNNotificationSound(named: soundName)
+        content.sound = sound
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: result * 60, repeats: false)
         let request = UNNotificationRequest(identifier: "Quick", content: content, trigger: trigger)

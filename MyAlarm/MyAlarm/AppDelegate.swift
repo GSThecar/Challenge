@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 1) {
+                if (oldSchemaVersion < 2) {
                     // Nothing to do!
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
@@ -78,6 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let vc = AlarmModalViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let vc = AlarmModalViewController()
         vc.modalPresentationStyle = .fullScreen
         self.window?.rootViewController?.present(vc, animated: true, completion: nil)

@@ -25,6 +25,17 @@
 		C03B5689232D0DA500BAFA69 /* AlarmListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */; };
 		C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B568A232F543200BAFA69 /* AddAlarmView.swift */; };
 		C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B568C232F544500BAFA69 /* AddAlarmView.xib */; };
+		C041EF4E235B014F00EF162B /* Sunshine_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF44235B014E00EF162B /* Sunshine_4.mp3 */; };
+		C041EF4F235B014F00EF162B /* Sunshine_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF45235B014E00EF162B /* Sunshine_2.mp3 */; };
+		C041EF50235B014F00EF162B /* Sunshine_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF46235B014E00EF162B /* Sunshine_7.mp3 */; };
+		C041EF51235B014F00EF162B /* Sunshine_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF47235B014E00EF162B /* Sunshine_3.mp3 */; };
+		C041EF52235B014F00EF162B /* Sunshine_9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF48235B014E00EF162B /* Sunshine_9.mp3 */; };
+		C041EF53235B014F00EF162B /* Sunshine_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF49235B014F00EF162B /* Sunshine_10.mp3 */; };
+		C041EF54235B014F00EF162B /* Sunshine_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF4A235B014F00EF162B /* Sunshine_5.mp3 */; };
+		C041EF55235B014F00EF162B /* Sunshine_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF4B235B014F00EF162B /* Sunshine_6.mp3 */; };
+		C041EF56235B014F00EF162B /* Sunshine_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF4C235B014F00EF162B /* Sunshine_1.mp3 */; };
+		C041EF57235B014F00EF162B /* Sunshine_8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF4D235B014F00EF162B /* Sunshine_8.mp3 */; };
+		C041EF59235B447800EF162B /* NoSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C041EF58235B447800EF162B /* NoSound.wav */; };
 		C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */; };
 		C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */; };
 		C0775383234F1E47003004E1 /* VocieMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0775382234F1E47003004E1 /* VocieMemoViewController.swift */; };
@@ -53,6 +64,17 @@
 		C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListTableViewCell.xib; sourceTree = "<group>"; };
 		C03B568A232F543200BAFA69 /* AddAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmView.swift; sourceTree = "<group>"; };
 		C03B568C232F544500BAFA69 /* AddAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlarmView.xib; sourceTree = "<group>"; };
+		C041EF44235B014E00EF162B /* Sunshine_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_4.mp3; sourceTree = "<group>"; };
+		C041EF45235B014E00EF162B /* Sunshine_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_2.mp3; sourceTree = "<group>"; };
+		C041EF46235B014E00EF162B /* Sunshine_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_7.mp3; sourceTree = "<group>"; };
+		C041EF47235B014E00EF162B /* Sunshine_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_3.mp3; sourceTree = "<group>"; };
+		C041EF48235B014E00EF162B /* Sunshine_9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_9.mp3; sourceTree = "<group>"; };
+		C041EF49235B014F00EF162B /* Sunshine_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_10.mp3; sourceTree = "<group>"; };
+		C041EF4A235B014F00EF162B /* Sunshine_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_5.mp3; sourceTree = "<group>"; };
+		C041EF4B235B014F00EF162B /* Sunshine_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_6.mp3; sourceTree = "<group>"; };
+		C041EF4C235B014F00EF162B /* Sunshine_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_1.mp3; sourceTree = "<group>"; };
+		C041EF4D235B014F00EF162B /* Sunshine_8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_8.mp3; sourceTree = "<group>"; };
+		C041EF58235B447800EF162B /* NoSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NoSound.wav; sourceTree = "<group>"; };
 		C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetQuickAlarmView.swift; sourceTree = "<group>"; };
 		C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetQuickAlarmView.xib; sourceTree = "<group>"; };
 		C0775382234F1E47003004E1 /* VocieMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocieMemoViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +126,7 @@
 		C03B5669232BCC5B00BAFA69 /* MyAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				C041EF43235B011600EF162B /* Sounds */,
 				C03B566A232BCC5B00BAFA69 /* AppDelegate.swift */,
 				C03B566E232BCC5B00BAFA69 /* Main.storyboard */,
 				C03B5671232BCC5C00BAFA69 /* Assets.xcassets */,
@@ -122,13 +145,31 @@
 				C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */,
 				C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */,
 				C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */,
-				C022C9ED23393572001975F6 /* Sunshine.mp3 */,
 				C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */,
 				C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */,
 				C01E9BE92349DBA80020BA62 /* AlarmModalViewController.swift */,
 				C0775382234F1E47003004E1 /* VocieMemoViewController.swift */,
 			);
 			path = MyAlarm;
+			sourceTree = "<group>";
+		};
+		C041EF43235B011600EF162B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C022C9ED23393572001975F6 /* Sunshine.mp3 */,
+				C041EF4C235B014F00EF162B /* Sunshine_1.mp3 */,
+				C041EF45235B014E00EF162B /* Sunshine_2.mp3 */,
+				C041EF47235B014E00EF162B /* Sunshine_3.mp3 */,
+				C041EF44235B014E00EF162B /* Sunshine_4.mp3 */,
+				C041EF4A235B014F00EF162B /* Sunshine_5.mp3 */,
+				C041EF4B235B014F00EF162B /* Sunshine_6.mp3 */,
+				C041EF46235B014E00EF162B /* Sunshine_7.mp3 */,
+				C041EF4D235B014F00EF162B /* Sunshine_8.mp3 */,
+				C041EF48235B014E00EF162B /* Sunshine_9.mp3 */,
+				C041EF49235B014F00EF162B /* Sunshine_10.mp3 */,
+				C041EF58235B447800EF162B /* NoSound.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		C99B6C1D9707B7CEC69D69E3 /* Frameworks */ = {
@@ -199,14 +240,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C041EF54235B014F00EF162B /* Sunshine_5.mp3 in Resources */,
+				C041EF4F235B014F00EF162B /* Sunshine_2.mp3 in Resources */,
 				C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */,
 				C03B5675232BCC5C00BAFA69 /* LaunchScreen.storyboard in Resources */,
 				C03B5672232BCC5C00BAFA69 /* Assets.xcassets in Resources */,
 				C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */,
+				C041EF56235B014F00EF162B /* Sunshine_1.mp3 in Resources */,
+				C041EF4E235B014F00EF162B /* Sunshine_4.mp3 in Resources */,
 				C03AF33E23337B8800E2D273 /* SetAlarmView.xib in Resources */,
 				C03B5670232BCC5B00BAFA69 /* Main.storyboard in Resources */,
+				C041EF52235B014F00EF162B /* Sunshine_9.mp3 in Resources */,
 				C03B5689232D0DA500BAFA69 /* AlarmListTableViewCell.xib in Resources */,
+				C041EF59235B447800EF162B /* NoSound.wav in Resources */,
+				C041EF57235B014F00EF162B /* Sunshine_8.mp3 in Resources */,
+				C041EF53235B014F00EF162B /* Sunshine_10.mp3 in Resources */,
+				C041EF50235B014F00EF162B /* Sunshine_7.mp3 in Resources */,
 				C022C9EE23393573001975F6 /* Sunshine.mp3 in Resources */,
+				C041EF55235B014F00EF162B /* Sunshine_6.mp3 in Resources */,
+				C041EF51235B014F00EF162B /* Sunshine_3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,7 @@ class AlarmListViewController: UIViewController {
     
     @IBOutlet weak var addAlarm: UIButton!
     
+    @IBOutlet weak var noAlarmStackView: UIStackView!
     
     @IBAction func addAlarm(_ sender: Any) {
         let view = AddAlarmView(frame: self.view.frame)
@@ -43,10 +44,6 @@ class AlarmListViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = image
         self.navigationController?.navigationBar.isTranslucent = true
-        
-        self.tabBarController?.tabBar.backgroundImage = image
-        self.tabBarController?.tabBar.shadowImage = image
-        self.tabBarController?.tabBar.isTranslucent = true
         
         alarmListTableView.backgroundColor = UIColor.clear
         
@@ -86,6 +83,11 @@ extension AlarmListViewController: UITableViewDataSource {
         switch section {
         case 0:
             guard let list = list else { return 0 }
+            if list.count == 0 {
+                self.noAlarmStackView.alpha = 1
+            } else if list.count == 1 {
+                self.noAlarmStackView.alpha = 0
+            }
             return list.count
         default:
             return 0
@@ -98,13 +100,17 @@ extension AlarmListViewController: UITableViewDataSource {
             if let list = list {
                 let target = list[indexPath.row]
                 cell.timeLabel.text = dateFormatter.string(for: target.alarm)
-                if let name = target.name {
-                    switch name {
-                    case "Alarm":
-                        cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
-                    default:
-                        cell.alarmImageView.image = UIImage(named: "IconQuickAlarm_Normal", in: .main, compatibleWith: nil)
-                    }
+                
+                switch target.name {
+                case "Quick":
+                    cell.alarmImageView.image = UIImage(named: "IconQuickAlarm_Normal", in: .main, compatibleWith: nil)
+                    cell.repeatStatusStackView.alpha = 0
+                case "Alarm":
+                    cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
+                    cell.repeatStatusStackView.alpha = 0
+                default:
+                    cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
+                    cell.repeatStatusStackView.alpha = 1
                 }
             }
             return cell
@@ -122,14 +128,16 @@ extension AlarmListViewController: UITableViewDelegate {
         return .delete
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        if let target = list?[indexPath.row] {
-            let realm = try! Realm()
-            try! realm.write {
-                realm.delete(target)
-            }
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        guard editingStyle == .delete, let target = list?[indexPath.row] else { return }
+        
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [target.name])
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(target)
         }
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        
         
     }
 }

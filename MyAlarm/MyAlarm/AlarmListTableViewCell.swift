@@ -15,6 +15,7 @@ class AlarmListTableViewCell: UITableViewCell {
     @IBOutlet weak var alarmImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var repeatStatusStackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,4 +28,26 @@ class AlarmListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+class TopRoundContentView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+    }
+}
+
+class BottomRoundContentView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10, height: 10))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+    }
 }

@@ -57,6 +57,7 @@ class VocieMemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         recordButton.layer.cornerRadius = recordButton.bounds.height / 2
         recordButton.isHidden = true
         stopButton.isHidden = true

@@ -11,14 +11,16 @@ import RealmSwift
 
 class Alarm: Object {
     //v0
-    @objc dynamic var alarm: Date?
+    @objc dynamic var alarm: Date = Date()
     //v1 : add 1more
-    @objc dynamic var name: String?
+    @objc dynamic var name: String = ""
+    //v2 : add 1more
+    @objc dynamic var repeatStatus: Bool = false
 }
 
 
 
-let dropBoxToken = "ZzXIFEHKkAAAAAAAAAAAJLtyTds9CgKzVnt7TlT_7Vp_lvrgyamfsubO4ZIt0tG_"
+//let dropBoxToken = ""
 let apiKey = "xx6RZJkByUtvInLx1vwPQ18XenCuZLLA"
 
 struct Location: Codable {

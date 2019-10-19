@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BJK-hN-IUD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BJK-hN-IUD">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,6 +85,7 @@
                     <connections>
                         <outlet property="addAlarm" destination="me3-mJ-nRc" id="zX5-hk-ycw"/>
                         <outlet property="alarmListTableView" destination="d2f-0p-Fmu" id="E7T-Pu-eWQ"/>
+                        <outlet property="noAlarmStackView" destination="pgu-NF-PlZ" id="NJ1-Xs-HM0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJP-aH-1QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,7 +306,7 @@
         <scene sceneID="d7J-gl-Tct">
             <objects>
                 <navigationController id="HTn-yY-K4n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="filled_icon-navi-03-dis_Normal" id="Mm3-Tz-e6T"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon-navi-03-dis_Normal" selectedImage="filled_icon-navi-03-dis_Normal" id="Mm3-Tz-e6T"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P1f-SO-vwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -322,7 +323,7 @@
         <scene sceneID="d5h-1k-QZM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K1L-i9-lcb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="filled_icon-navi-01-dis_Normal" id="a6s-z9-xj4"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon-navi-01-dis.4_Normal" selectedImage="filled_icon-navi-01-dis_Normal" id="a6s-z9-xj4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fWi-Hb-vlR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -342,7 +343,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BJK-hN-IUD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fU0-bb-8rT">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" selectionIndicatorImage="ImageTabBarIndicator_Normal" id="fU0-bb-8rT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,11 +365,11 @@
             <objects>
                 <viewController id="kdD-YH-QfQ" customClass="SleepMusicViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2A-I3-qpS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EQQ-qT-ROL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9S-tn-Pha">
                                     <size key="itemSize" width="50" height="50"/>
@@ -422,10 +423,10 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7b-mW-6ws">
-                                <rect key="frame" x="10" y="597" width="394" height="80"/>
+                                <rect key="frame" x="10" y="553" width="394" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-yC-CsD">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-yC-CsD">
+                                        <rect key="frame" x="5" y="5" width="100" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="xZX-eT-Uj4"/>
                                         </constraints>
@@ -448,7 +449,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SIu-sb-30y">
-                                        <rect key="frame" x="115" y="14.666666666666629" width="48" height="51"/>
+                                        <rect key="frame" x="120" y="14.666666666666629" width="48" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBx-I6-UOp">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="17"/>
@@ -467,13 +468,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vXO-yC-CsD" firstAttribute="leading" secondItem="k7b-mW-6ws" secondAttribute="leading" id="0zy-pB-ygd"/>
-                                    <constraint firstAttribute="bottom" secondItem="vXO-yC-CsD" secondAttribute="bottom" id="4b7-6y-JXC"/>
+                                    <constraint firstItem="vXO-yC-CsD" firstAttribute="leading" secondItem="k7b-mW-6ws" secondAttribute="leading" constant="5" id="0zy-pB-ygd"/>
+                                    <constraint firstAttribute="bottom" secondItem="vXO-yC-CsD" secondAttribute="bottom" constant="5" id="4b7-6y-JXC"/>
                                     <constraint firstItem="SIu-sb-30y" firstAttribute="centerY" secondItem="33U-x1-eN1" secondAttribute="centerY" id="7mb-D8-mck"/>
                                     <constraint firstItem="33U-x1-eN1" firstAttribute="centerY" secondItem="6CT-VP-Xfi" secondAttribute="centerY" id="Lyz-sq-iyx"/>
                                     <constraint firstAttribute="bottom" secondItem="6CT-VP-Xfi" secondAttribute="bottom" id="NlM-dD-RDf"/>
                                     <constraint firstItem="SIu-sb-30y" firstAttribute="leading" secondItem="vXO-yC-CsD" secondAttribute="trailing" constant="15" id="S90-YO-a5Q"/>
-                                    <constraint firstItem="vXO-yC-CsD" firstAttribute="top" secondItem="k7b-mW-6ws" secondAttribute="top" id="VBW-Wd-mD3"/>
+                                    <constraint firstItem="vXO-yC-CsD" firstAttribute="top" secondItem="k7b-mW-6ws" secondAttribute="top" constant="5" id="VBW-Wd-mD3"/>
                                     <constraint firstAttribute="trailing" secondItem="6CT-VP-Xfi" secondAttribute="trailing" id="VKG-B1-Q2V"/>
                                     <constraint firstItem="6CT-VP-Xfi" firstAttribute="centerY" secondItem="k7b-mW-6ws" secondAttribute="centerY" id="YJT-xS-ilW"/>
                                     <constraint firstItem="6CT-VP-Xfi" firstAttribute="top" secondItem="k7b-mW-6ws" secondAttribute="top" id="adA-Um-Taw"/>
@@ -514,10 +515,12 @@
         <scene sceneID="2Bt-p3-pcv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HvG-mY-46W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="filled_icon-navi-02-dis_Normal" id="D9V-lG-cKQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon-navi-02-dis_Normal" selectedImage="filled_icon-navi-02-dis_Normal" id="D9V-lG-cKQ">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mxs-u0-RW9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="mxs-u0-RW9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -529,14 +532,14 @@
             </objects>
             <point key="canvasLocation" x="1083" y="39"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="fJo-GK-rQr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hDl-wo-HD1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sXY-CJ-VYO"/>
+                    <tabBarItem key="tabBarItem" title="" image="iconVoiceAssistant_Normal" id="sXY-CJ-VYO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="OhY-Yq-Lvi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -555,8 +558,13 @@
         <image name="IconFabPlus_Normal" width="16" height="16"/>
         <image name="IconPlayerPause24_Normal" width="24" height="24"/>
         <image name="IconPlayerPlay24_Normal" width="24" height="24"/>
+        <image name="ImageTabBarIndicator_Normal" width="58" height="49"/>
         <image name="filled_icon-navi-01-dis_Normal" width="25" height="25"/>
         <image name="filled_icon-navi-02-dis_Normal" width="25" height="25"/>
         <image name="filled_icon-navi-03-dis_Normal" width="25" height="25"/>
+        <image name="icon-navi-01-dis.4_Normal" width="25" height="25"/>
+        <image name="icon-navi-02-dis_Normal" width="25" height="25"/>
+        <image name="icon-navi-03-dis_Normal" width="25" height="25"/>
+        <image name="iconVoiceAssistant_Normal" width="24" height="24"/>
     </resources>
 </document>
