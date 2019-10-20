@@ -20,7 +20,7 @@ class Alarm: Object {
 
 
 
-//let dropBoxToken = ""
+let dropBoxToken = ""
 let apiKey = "xx6RZJkByUtvInLx1vwPQ18XenCuZLLA"
 
 struct Location: Codable {
