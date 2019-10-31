@@ -51,7 +51,7 @@ class AlarmListViewController: UIViewController {
         alarmListTableView.register(nib, forCellReuseIdentifier: AlarmListTableViewCell.identifier)
         
         addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
-        // Do any additional setup after loading the view.
+        
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         list = realm.objects(Alarm.self)
@@ -137,8 +137,6 @@ extension AlarmListViewController: UITableViewDelegate {
             realm.delete(target)
         }
         tableView.deleteRows(at: [indexPath], with: .fade)
-        
-        
     }
 }
 

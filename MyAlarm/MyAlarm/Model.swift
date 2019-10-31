@@ -32,6 +32,7 @@ struct Location: Codable {
         case localizedName = "LocalizedName"
     }
 }
+
 struct Forecast: Codable {
     struct DailyForecasts: Codable {
         struct Temperature: Codable {
@@ -79,7 +80,8 @@ struct MemoList: Codable {
     }
     var entries: [Entries]
 }
-struct ListParameter: Codable{
+
+struct ListParameter: Codable {
     let path = ""
     let recursive = false
     let include_media_info = false
@@ -88,6 +90,7 @@ struct ListParameter: Codable{
     let include_mounted_folders = true
     let include_non_downloadable_files = true
 }
+
 struct DeleteParameter: Codable {
     let path: String
 }

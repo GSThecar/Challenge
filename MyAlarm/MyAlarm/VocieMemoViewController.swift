@@ -80,57 +80,24 @@ class VocieMemoViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-        
-        
     }
     
     func fetch(completion: @escaping () -> () ) {
-        guard let apiUrl = URL(string: "https://api.dropboxapi.com/2/files/list_folder") else {
-            print("Inavalid URL")
-            return
-        }
         
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "POST"
-        request.setValue("Bearer \(dropBoxToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body = ListParameter()
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(body)
-            request.httpBody = data
-        } catch { print(error.localizedDescription)}
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, response, error) in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
+        let apiUrlStr = "https://api.dropboxapi.com/2/files/list_folder"
+        AF.request(apiUrlStr, method: .post, parameters: ListParameter(), encoder: JSONParameterEncoder.default, headers: [HTTPHeader(name: "Authorization", value: "Bearer \(dropBoxToken)"), HTTPHeader(name: "Content-Type", value: "application/json")], interceptor: nil)
+            .validate(statusCode: 200...299)
+            .responseData { (response) in
+            if let data = response.data {
+                do {
+                    let decorder = JSONDecoder()
+                    self.list = try decorder.decode(MemoList.self, from: data)
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid Response")
-                return
-            }
-            guard (200...299).contains(httpResponse.statusCode) else {
-                print(httpResponse.statusCode)
-                return
-            }
-            guard let data = data else {
-                print("Invalid Data")
-                return
-            }
-            do {
-                let decorder = JSONDecoder()
-                self.list = try decorder.decode(MemoList.self, from: data)
-            } catch {
-                print(error.localizedDescription)
-            }
+            completion()
         }
-        task.resume()
     }
     
     func uploadMemo(completion: @escaping () -> () ) {
@@ -145,87 +112,28 @@ class VocieMemoViewController: UIViewController {
         request.setValue("{\"path\": \"/recording.m4a\",\"mode\": \"overwrite\",\"autorename\": true,\"mute\": false,\"strict_conflict\": false}", forHTTPHeaderField: "Dropbox-API-Arg")
         request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         
-        let session = URLSession.shared
         let fileURL = mp3Path.appendingPathComponent("recording.m4a")
-        
-        do {
-            let fileData = try Data(contentsOf: fileURL)
-            let task = session.uploadTask(with: request, from: fileData) { (data, response, error) in
-                defer {
-                    DispatchQueue.main.async {
-                        completion()
-                    }
-                }
-                if let error = error {
-                    print(error)
-                    return
-                }
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    print("Invalid Response")
-                    return
-                }
-                guard (200...299).contains(httpResponse.statusCode) else {
-                    print(httpResponse.statusCode)
-                    return
-                }
-                guard let data = data, let strData = String(data: data, encoding: .utf8) else {
-                    print("Invalid Data")
-                    return
-                }
-                print("녹음파일이저장되었습니다")
-            }
-            task.resume()
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-    }
-    
-    func delete(filename: String, completion: @escaping () -> () ) {
-        guard let apiUrl = URL(string: "https://api.dropboxapi.com/2/files/delete_v2") else {
-            print("Inavalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "POST"
-        request.setValue("Bearer \(dropBoxToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body = DeleteParameter(path: filename)
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(body)
-            request.httpBody = data
-        } catch { print(error.localizedDescription)}
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, response, error) in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
-                }
-            }
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid Response")
-                return
-            }
-            guard (200...299).contains(httpResponse.statusCode) else {
-                print(httpResponse.statusCode)
-                return
-            }
-            guard let data = data else {
+        AF.upload(fileURL, with: request).validate(statusCode: 200...299).responseData { (response) in
+            guard let data = response.data else {
                 print("Invalid Data")
                 return
             }
+            print("녹음파일이저장되었습니다")
+            completion()
         }
-        task.resume()
+    }
+    
+    func delete(filename: String, completion: @escaping () -> () ) {
+        let apiUrlStr = "https://api.dropboxapi.com/2/files/delete_v2"
+        AF.request(apiUrlStr, method: .post, parameters: DeleteParameter(path: filename), encoder: JSONParameterEncoder.default, headers: [HTTPHeader(name: "Authorization", value: "Bearer \(dropBoxToken)"), HTTPHeader(name: "Content-Type", value: "application/json")], interceptor: nil).validate(statusCode: 200...299).responseData { (response) in
+            guard let data = response.data else {
+                print("Invalid Data")
+                return }
+            completion()
+        }
+
     }
 }
-
-
 
 
 extension VocieMemoViewController: UITableViewDataSource {
