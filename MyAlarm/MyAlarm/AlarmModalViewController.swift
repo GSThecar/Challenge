@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class AlarmModalViewController: UIViewController {
-
+    
     let formatter: DateFormatter = {
         let f = DateFormatter()
         f.locale = Locale(identifier: "ko_kr")
@@ -19,7 +19,7 @@ class AlarmModalViewController: UIViewController {
     
     var player: AVAudioPlayer?
     
-   @objc func close() {
+    @objc func close() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -37,7 +37,6 @@ class AlarmModalViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = image
         imageView.contentMode = .scaleAspectFill
-        guard let superView = self.view else { return }
         
         let date = Date()
         let dateLabel = UILabel()
@@ -60,47 +59,42 @@ class AlarmModalViewController: UIViewController {
         removeButton.backgroundColor = UIColor.blue
         removeButton.addTarget(self, action: #selector(self.close), for: .touchUpInside)
         
-        superView.addSubview(imageView)
+        view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        let top0Constraint = NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: superView, attribute: .top, multiplier: 1, constant: 0)
-        let bottom0Constraint = NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: superView, attribute: .bottom, multiplier: 1, constant: 0)
-        let leading0Constraint = NSLayoutConstraint(item: imageView, attribute: .leading, relatedBy: .equal, toItem: superView, attribute: .leading, multiplier: 1, constant: 0)
-        let trailing0Constraint = NSLayoutConstraint(item: imageView, attribute: .trailing, relatedBy: .equal, toItem: superView, attribute: .trailing, multiplier: 1, constant: 0)
-        superView.addConstraints([top0Constraint, bottom0Constraint, leading0Constraint, trailing0Constraint])
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         
-        superView.addSubview(dateLabel)
+        view.addSubview(dateLabel)
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        let top60Constraint = NSLayoutConstraint(item: dateLabel, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .top, multiplier: 1, constant: 60)
-        let leading15Constraint = NSLayoutConstraint(item: dateLabel, attribute: .leading, relatedBy: .equal, toItem: imageView, attribute: .leading, multiplier: 1, constant: 15)
-        let trailing15Constraint = NSLayoutConstraint(item: imageView, attribute: .trailing, relatedBy: .equal, toItem: dateLabel, attribute: .trailing, multiplier: 1, constant: 15)
-        superView.addConstraints([top60Constraint, leading15Constraint, trailing15Constraint])
+        dateLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         
-        superView.addSubview(timeLabel)
+        view.addSubview(timeLabel)
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        let sameLeadingConstraint = NSLayoutConstraint(item: timeLabel, attribute: .leading, relatedBy: .equal, toItem: dateLabel, attribute: .leading, multiplier: 1, constant: 0)
-        let betweenLabelsConstraint = NSLayoutConstraint(item: timeLabel, attribute: .top, relatedBy: .equal, toItem: dateLabel, attribute: .bottom, multiplier: 1, constant: 20)
-        superView.addConstraints([sameLeadingConstraint, betweenLabelsConstraint])
-    
-        superView.addSubview(removeButton)
+        timeLabel.leadingAnchor.constraint(equalTo: dateLabel.leadingAnchor).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 20).isActive = true
+        
+        view.addSubview(removeButton)
         removeButton.translatesAutoresizingMaskIntoConstraints = false
-        let bottom15Constraint = NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: removeButton, attribute: .bottom, multiplier: 1, constant: 15)
-        let equalLeading = NSLayoutConstraint(item: removeButton, attribute: .leading, relatedBy: .equal, toItem: timeLabel, attribute: .leading, multiplier: 1, constant: 0)
-        let equalTrailing = NSLayoutConstraint(item: removeButton, attribute: .trailing, relatedBy: .equal, toItem: dateLabel, attribute: .trailing, multiplier: 1, constant: 0)
-        let height = NSLayoutConstraint(item: removeButton, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: 60)
-        superView.addConstraints([bottom15Constraint, equalLeading, equalTrailing, height])
+        removeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+        removeButton.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
+        removeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
+        removeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         let musicUrl = URL(fileURLWithPath: "Sunshine.mp3")
-            do {
-                let player = try AVAudioPlayer(contentsOf: musicUrl, fileTypeHint: "mp3")
-                player.numberOfLoops = 100
-                player.play()
-            }
-            catch {
-                print(error.localizedDescription)
+        do {
+            let player = try AVAudioPlayer(contentsOf: musicUrl, fileTypeHint: "mp3")
+            player.numberOfLoops = 100
+            player.play()
+        }
+        catch {
+            print(error.localizedDescription)
         }
     }
     deinit {
         print(self, #function)
     }
-
+    
 }

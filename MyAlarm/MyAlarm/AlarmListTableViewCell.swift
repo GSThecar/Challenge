@@ -18,7 +18,6 @@ class AlarmListTableViewCell: UITableViewCell {
     @IBOutlet weak var repeatStatusStackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         backgroundColor = UIColor.clear
     }
 
