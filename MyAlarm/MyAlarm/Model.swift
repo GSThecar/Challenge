@@ -7,17 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
-
-class Alarm: Object {
-    //v0
-    @objc dynamic var alarm: Date = Date()
-    //v1 : add 1more
-    @objc dynamic var name: String = ""
-    //v2 : add 1more
-    @objc dynamic var repeatStatus: Bool = false
-}
-
 
 
 let dropBoxToken = ""
