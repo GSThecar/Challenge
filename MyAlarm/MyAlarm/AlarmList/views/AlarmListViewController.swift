@@ -12,9 +12,9 @@ import CoreLocation
 
 class AlarmListViewController: UIViewController {
     let dateFormatter: DateFormatter = {
-        let f = DateFormatter()
-        f.timeStyle = .short
-        return f
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
     }()
     
     var list: Results<Alarm>?
@@ -33,7 +33,7 @@ class AlarmListViewController: UIViewController {
     
     @IBAction func addAlarm(_ sender: Any) {
         let view = AddAlarmView(frame: self.view.frame)
-        view.vc = self
+        view.alarmListViewController = self
         self.view.addSubview(view)
     }
     
@@ -47,8 +47,8 @@ class AlarmListViewController: UIViewController {
         
         alarmListTableView.backgroundColor = UIColor.clear
         
-        let nib = UINib(nibName: AlarmListTableViewCell.identifier, bundle: nil)
-        alarmListTableView.register(nib, forCellReuseIdentifier: AlarmListTableViewCell.identifier)
+        let nib = UINib(nibName: AlarmListTableViewCell.reuseIdentifier, bundle: nil)
+        alarmListTableView.register(nib, forCellReuseIdentifier: AlarmListTableViewCell.reuseIdentifier)
         
         addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
         
@@ -96,7 +96,7 @@ extension AlarmListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.identifier, for: indexPath) as! AlarmListTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.reuseIdentifier, for: indexPath) as! AlarmListTableViewCell
             if let list = list {
                 let target = list[indexPath.row]
                 cell.timeLabel.text = dateFormatter.string(for: target.alarm)
@@ -148,7 +148,7 @@ extension AlarmListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             
-            WeatherData.shared.fetchLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude) {
+            WeatherData.shared.fetchLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) {
                 print(location)
             }
         }

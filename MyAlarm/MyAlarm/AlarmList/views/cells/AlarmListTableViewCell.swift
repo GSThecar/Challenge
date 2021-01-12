@@ -10,7 +10,7 @@ import UIKit
 
 class AlarmListTableViewCell: UITableViewCell {
     
-    static let identifier = "AlarmListTableViewCell"
+    static let reuseIdentifier = "AlarmListTableViewCell"
 
     @IBOutlet weak var alarmImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!

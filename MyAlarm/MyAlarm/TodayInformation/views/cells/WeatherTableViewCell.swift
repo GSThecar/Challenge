@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 
-    
+    static let reuseIdentifier: String = "WeatherTableViewCell"
     @IBOutlet weak var weatherImageView: UIImageView!
     
     @IBOutlet weak var currentTemperatureLabel: UILabel!

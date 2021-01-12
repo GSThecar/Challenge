@@ -126,7 +126,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="145" id="Ga4-un-HkR" customClass="WeatherTableViewCell" customModule="MyAlarm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" rowHeight="145" id="Ga4-un-HkR" customClass="WeatherTableViewCell" customModule="MyAlarm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="105" width="414" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ga4-un-HkR" id="Rwy-Mc-dud">
@@ -205,7 +205,7 @@
         <!--음성메모-->
         <scene sceneID="TI1-bF-1g5">
             <objects>
-                <viewController id="elg-mE-E9p" customClass="VocieMemoViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="elg-mE-E9p" customClass="VoiceMemoViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkb-Eb-9nY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

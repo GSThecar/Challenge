@@ -39,8 +39,8 @@ class WeatherData {
         }
     }
     
-    func fetchLocation( lat: Double, lon: Double, completion: @escaping () -> () ) {
-        let locURLStr = "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=\(apiKey)&q=\(lat),\(lon)&language=ko&details=false&toplevel=false"
+    func fetchLocation( latitude: Double, longitude: Double, completion: @escaping () -> () ) {
+        let locURLStr = "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=\(apiKey)&q=\(latitude),\(longitude)&language=ko&details=false&toplevel=false"
         
         AF.request(locURLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: nil, interceptor: nil).validate(statusCode: 200..<300).responseData { (response) in
             if let data = response.data {

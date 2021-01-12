@@ -9,26 +9,18 @@
 import UIKit
 import CoreLocation
 
-extension UIViewController {
-    func show(message: String) {
-        let alert = UIAlertController.init(title: "알림", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction.init(title: "확인", style: .default, handler: nil)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
-}
 class TodayInformationTableViewController: UITableViewController {
     let dateFormatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateStyle = .full
-        f.dateFormat = "MMM d일 EEEE"
-        f.locale = Locale(identifier: "ko_kr")
-        return f
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.dateFormat = "MMM d일 EEEE"
+        formatter.locale = Locale(identifier: "ko_kr")
+        return formatter
     }()
     let numberFormatter: NumberFormatter = {
-        let f = NumberFormatter()
-        f.minimumFractionDigits = 0
-        return f
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        return formatter
     }()
     
     override func viewDidLoad() {
@@ -69,7 +61,7 @@ class TodayInformationTableViewController: UITableViewController {
             cell.textLabel?.text = "오늘의 패널"
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier, for: indexPath) as! WeatherTableViewCell
             if let imageNo = WeatherData.shared.weather?.weatherIcon {
                 let image = UIImage(named: "WeatherFilledColor\(imageNo)_Normal")
                 cell.weatherImageView.image = image

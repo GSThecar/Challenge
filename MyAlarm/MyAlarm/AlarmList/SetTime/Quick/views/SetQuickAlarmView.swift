@@ -12,7 +12,8 @@ import UserNotifications
 
 class SetQuickAlarmView: UIView {
 
-    weak var vc: AlarmListViewController?
+    weak var alarmListViewController: AlarmListViewController?
+    private let identifier: String = "SetQuickAlarmView"
     @IBOutlet weak var resultLabel: UILabel!
     
     
@@ -29,7 +30,7 @@ class SetQuickAlarmView: UIView {
     }
     
     func commonInitialize() {
-        if let view = Bundle.main.loadNibNamed("SetQuickAlarmView", owner: self, options: nil)?.first as? UIView {
+        if let view = Bundle.main.loadNibNamed(identifier, owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             self.addSubview(view)
         }
@@ -100,13 +101,13 @@ class SetQuickAlarmView: UIView {
        try! realm.write {
             realm.add(newAlarm)
         }
-        vc?.alarmListTableView.reloadData()
+        alarmListViewController?.alarmListTableView.reloadData()
         close(sender)
     }
     
     @IBAction func close(_ sender: Any) {
         removeFromSuperview()
-        vc?.navigationController?.navigationBar.isHidden = false
-        vc?.tabBarController?.tabBar.isHidden = false
+        alarmListViewController?.navigationController?.navigationBar.isHidden = false
+        alarmListViewController?.tabBarController?.tabBar.isHidden = false
     }
 }

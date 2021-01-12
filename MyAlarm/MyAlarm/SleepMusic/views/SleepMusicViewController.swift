@@ -73,7 +73,7 @@ extension SleepMusicViewController: UICollectionViewDataSource {
         return imageList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SleepMusicCollectionViewCell.identifier, for: indexPath) as! SleepMusicCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SleepMusicCollectionViewCell.reuseIdentifier, for: indexPath) as! SleepMusicCollectionViewCell
         cell.musicImageView.image = UIImage(named: imageList[indexPath.row])
         cell.musicNameLabel.text = nameList[indexPath.row]
         return cell
