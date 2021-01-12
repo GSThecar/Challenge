@@ -9,8 +9,8 @@
 import UIKit
 
 class AddAlarmView: UIView {
-    weak var vc: AlarmListViewController?
-    
+    weak var alarmListViewController: AlarmListViewController?
+    private let identifier: String = "AddAlarmView"
     @IBOutlet weak var quickAlarm: UIButton!
     @IBOutlet weak var alarm: UIButton!
     @IBOutlet weak var close: UIButton!
@@ -29,21 +29,21 @@ class AddAlarmView: UIView {
     
     @IBAction func addQuicAlarm(_ sender: Any) {
         let setQuickView = SetQuickAlarmView(frame: self.bounds)
-        setQuickView.vc = vc
+        setQuickView.alarmListViewController = alarmListViewController
         self.isHidden = true
-        vc?.navigationController?.navigationBar.isHidden = self.isHidden
-        vc?.tabBarController?.tabBar.isHidden = self.isHidden
-        vc?.view.addSubview(setQuickView)
+        alarmListViewController?.navigationController?.navigationBar.isHidden = self.isHidden
+        alarmListViewController?.tabBarController?.tabBar.isHidden = self.isHidden
+        alarmListViewController?.view.addSubview(setQuickView)
         self.removeFromSuperview()
     }
     
     @IBAction func addAlarm(_ sender: Any) {
         let setAlarmView = SetAlarmView(frame: self.bounds)
-        setAlarmView.vc = vc
+        setAlarmView.alarmListViewController = alarmListViewController
         self.isHidden = true
-        vc?.navigationController?.navigationBar.isHidden = self.isHidden
-        vc?.tabBarController?.tabBar.isHidden = self.isHidden
-        vc?.view.addSubview(setAlarmView)
+        alarmListViewController?.navigationController?.navigationBar.isHidden = self.isHidden
+        alarmListViewController?.tabBarController?.tabBar.isHidden = self.isHidden
+        alarmListViewController?.view.addSubview(setAlarmView)
     }
     @IBAction func cancle(_ sender: Any) {
         self.removeFromSuperview()
@@ -51,7 +51,7 @@ class AddAlarmView: UIView {
     
     
     func commonInitialize() {
-        if let view = Bundle.main.loadNibNamed("AddAlarmView", owner: self, options: nil)?.first as? UIView {
+        if let view = Bundle.main.loadNibNamed(identifier, owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             self.addSubview(view)
             quickAlarm.layer.cornerRadius = quickAlarm.frame.height / 2

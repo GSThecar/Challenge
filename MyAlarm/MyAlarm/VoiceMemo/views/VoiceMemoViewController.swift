@@ -1,5 +1,5 @@
 //
-//  VocieMemoTableViewController.swift
+//  VoiceMemoViewController.swift
 //  MyAlarm
 //
 //  Created by 이덕화 on 2019/10/10.
@@ -11,12 +11,12 @@ import AVFoundation
 import Alamofire
 
 
-class VocieMemoViewController: UIViewController {
+class VoiceMemoViewController: UIViewController {
     
-    let formatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return f
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return formatter
     }()
     
     @IBOutlet weak var stopButton: UIButton!
@@ -136,7 +136,7 @@ class VocieMemoViewController: UIViewController {
 }
 
 
-extension VocieMemoViewController: UITableViewDataSource {
+extension VoiceMemoViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -152,10 +152,10 @@ extension VocieMemoViewController: UITableViewDataSource {
         
         cell.textLabel?.text = list?.entries[indexPath.row].name
         if let strDate = list?.entries[indexPath.row].client_modified {
-            let date = formatter.date(from: strDate)
-            let f = DateFormatter()
-            f.dateFormat = "EEEE MMM d"
-            cell.detailTextLabel?.text = f.string(for: date)
+            let date = dateFormatter.date(from: strDate)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE MMM d"
+            cell.detailTextLabel?.text = dateFormatter.string(for: date)
         }
         
         
@@ -163,7 +163,7 @@ extension VocieMemoViewController: UITableViewDataSource {
     }
 }
 
-extension VocieMemoViewController: UITableViewDelegate {
+extension VoiceMemoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let name = self.list?.entries[indexPath.row].name else {return}
         let url = mp3Path.appendingPathComponent(name)
@@ -194,7 +194,7 @@ extension VocieMemoViewController: UITableViewDelegate {
     }
 }
 
-extension VocieMemoViewController: AVAudioRecorderDelegate {
+extension VoiceMemoViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         fetch {
             self.voiceMemoListTableView.reloadData()

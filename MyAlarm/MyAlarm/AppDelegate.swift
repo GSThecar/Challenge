@@ -51,15 +51,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let vc = AlarmModalViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+        let wakeUpViewController = WakeUpViewController()
+        wakeUpViewController.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(wakeUpViewController, animated: true, completion: nil)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let vc = AlarmModalViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+        let wakeUpViewController = WakeUpViewController()
+        wakeUpViewController.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController?.present(wakeUpViewController, animated: true, completion: nil)
     }
     
 }

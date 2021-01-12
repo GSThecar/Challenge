@@ -1,5 +1,5 @@
 //
-//  AlarmModalViewController.swift
+//  WakeUpViewController.swift
 //  MyAlarm
 //
 //  Created by 이덕화 on 06/10/2019.
@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class AlarmModalViewController: UIViewController {
+class WakeUpViewController: UIViewController {
     
-    let formatter: DateFormatter = {
-        let f = DateFormatter()
-        f.locale = Locale(identifier: "ko_kr")
-        return f
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_kr")
+        return formatter
     }()
     
     var player: AVAudioPlayer?
@@ -40,18 +40,18 @@ class AlarmModalViewController: UIViewController {
         
         let date = Date()
         let dateLabel = UILabel()
-        formatter.dateStyle = .full
+        dateFormatter.dateStyle = .full
         dateLabel.textAlignment = .left
         dateLabel.textColor = UIColor.white
-        dateLabel.text = formatter.string(from: date)
+        dateLabel.text = dateFormatter.string(from: date)
         
         let timeLabel = UILabel()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
         timeLabel.textAlignment = dateLabel.textAlignment
         timeLabel.textColor = dateLabel.textColor
         timeLabel.font = .boldSystemFont(ofSize: 60)
-        timeLabel.text = formatter.string(from: date)
+        timeLabel.text = dateFormatter.string(from: date)
         
         let removeButton = UIButton()
         removeButton.setTitle("Dismiss", for: .normal)

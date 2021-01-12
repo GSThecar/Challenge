@@ -9,7 +9,7 @@
 import UIKit
 
 class SleepMusicCollectionViewCell: UICollectionViewCell {
-    static let identifier = "SleepMusicCollectionViewCell"
+    static let reuseIdentifier = "SleepMusicCollectionViewCell"
     
     @IBOutlet weak var musicImageView: UIImageView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
