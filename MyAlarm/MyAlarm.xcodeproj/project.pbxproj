@@ -39,6 +39,7 @@
 		C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */; };
 		C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */; };
 		C0775383234F1E47003004E1 /* VocieMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0775382234F1E47003004E1 /* VocieMemoViewController.swift */; };
+		C0D0FF5925ADC4CB005A22D4 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */; };
 		C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */; };
 		C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetQuickAlarmView.swift; sourceTree = "<group>"; };
 		C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetQuickAlarmView.xib; sourceTree = "<group>"; };
 		C0775382234F1E47003004E1 /* VocieMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocieMemoViewController.swift; sourceTree = "<group>"; };
+		C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		D3B8D99FF53ADF864BEE92B1 /* Pods-MyAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.release.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,11 @@
 		C03B5669232BCC5B00BAFA69 /* MyAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				C0D0FF5025ADC41D005A22D4 /* WakeUp */,
+				C0D0FF4425ADC22D005A22D4 /* VoiceMemo */,
+				C0D0FF3F25ADC17B005A22D4 /* TodayInformation */,
+				C0D0FF3C25ADC0A0005A22D4 /* SleepMusic */,
+				C0D0FF3825ADBFF1005A22D4 /* AlarmList */,
 				C041EF43235B011600EF162B /* Sounds */,
 				C03B566A232BCC5B00BAFA69 /* AppDelegate.swift */,
 				C03B566E232BCC5B00BAFA69 /* Main.storyboard */,
@@ -133,22 +140,6 @@
 				C03B5673232BCC5C00BAFA69 /* LaunchScreen.storyboard */,
 				C03B5676232BCC5C00BAFA69 /* info.plist */,
 				C03B567C232C990C00BAFA69 /* Model.swift */,
-				C03B5684232D0D3E00BAFA69 /* AlarmListViewController.swift */,
-				C03B5686232D0DA500BAFA69 /* AlarmListTableViewCell.swift */,
-				C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */,
-				C03B568A232F543200BAFA69 /* AddAlarmView.swift */,
-				C03B568C232F544500BAFA69 /* AddAlarmView.xib */,
-				C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */,
-				C03AF33D23337B8800E2D273 /* SetAlarmView.xib */,
-				C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */,
-				C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */,
-				C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */,
-				C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */,
-				C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */,
-				C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */,
-				C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */,
-				C01E9BE92349DBA80020BA62 /* AlarmModalViewController.swift */,
-				C0775382234F1E47003004E1 /* VocieMemoViewController.swift */,
 			);
 			path = MyAlarm;
 			sourceTree = "<group>";
@@ -170,6 +161,210 @@
 				C041EF58235B447800EF162B /* NoSound.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		C0D0FF3825ADBFF1005A22D4 /* AlarmList */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4925ADC320005A22D4 /* SetTime */,
+				C0D0FF4625ADC2EF005A22D4 /* AddAlarm */,
+				C0D0FF3925ADC01A005A22D4 /* views */,
+				C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */,
+			);
+			path = AlarmList;
+			sourceTree = "<group>";
+		};
+		C0D0FF3925ADC01A005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF3B25ADC047005A22D4 /* xibs */,
+				C0D0FF3A25ADC02D005A22D4 /* cells */,
+				C03B5684232D0D3E00BAFA69 /* AlarmListViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF3A25ADC02D005A22D4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				C03B5686232D0DA500BAFA69 /* AlarmListTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		C0D0FF3B25ADC047005A22D4 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		C0D0FF3C25ADC0A0005A22D4 /* SleepMusic */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF3D25ADC10C005A22D4 /* views */,
+			);
+			path = SleepMusic;
+			sourceTree = "<group>";
+		};
+		C0D0FF3D25ADC10C005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF3E25ADC112005A22D4 /* cells */,
+				C008504E2338FAA600D624F9 /* SleepMusicViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF3E25ADC112005A22D4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				C008504C2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		C0D0FF3F25ADC17B005A22D4 /* TodayInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4025ADC18D005A22D4 /* views */,
+				C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */,
+			);
+			path = TodayInformation;
+			sourceTree = "<group>";
+		};
+		C0D0FF4025ADC18D005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4125ADC1C2005A22D4 /* cells */,
+				C038EF2D2334A09700CF4901 /* TodayInformationTableViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF4125ADC1C2005A22D4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		C0D0FF4425ADC22D005A22D4 /* VoiceMemo */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4525ADC23B005A22D4 /* views */,
+			);
+			path = VoiceMemo;
+			sourceTree = "<group>";
+		};
+		C0D0FF4525ADC23B005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0775382234F1E47003004E1 /* VocieMemoViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF4625ADC2EF005A22D4 /* AddAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4725ADC2FE005A22D4 /* views */,
+			);
+			path = AddAlarm;
+			sourceTree = "<group>";
+		};
+		C0D0FF4725ADC2FE005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4825ADC304005A22D4 /* xibs */,
+				C03B568A232F543200BAFA69 /* AddAlarmView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF4825ADC304005A22D4 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C03B568C232F544500BAFA69 /* AddAlarmView.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		C0D0FF4925ADC320005A22D4 /* SetTime */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4D25ADC3EE005A22D4 /* Quick */,
+				C0D0FF4C25ADC3CA005A22D4 /* Normal */,
+			);
+			path = SetTime;
+			sourceTree = "<group>";
+		};
+		C0D0FF4A25ADC379005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4B25ADC398005A22D4 /* xibs */,
+				C03AF33B23337B2A00E2D273 /* SetAlarmView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF4B25ADC398005A22D4 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C03AF33D23337B8800E2D273 /* SetAlarmView.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		C0D0FF4C25ADC3CA005A22D4 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4A25ADC379005A22D4 /* views */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		C0D0FF4D25ADC3EE005A22D4 /* Quick */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4E25ADC3F7005A22D4 /* views */,
+			);
+			path = Quick;
+			sourceTree = "<group>";
+		};
+		C0D0FF4E25ADC3F7005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF4F25ADC405005A22D4 /* xibs */,
+				C04A84CF2335E107002307F9 /* SetQuickAlarmView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C0D0FF4F25ADC405005A22D4 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		C0D0FF5025ADC41D005A22D4 /* WakeUp */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0FF5125ADC468005A22D4 /* views */,
+			);
+			path = WakeUp;
+			sourceTree = "<group>";
+		};
+		C0D0FF5125ADC468005A22D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C01E9BE92349DBA80020BA62 /* AlarmModalViewController.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		C99B6C1D9707B7CEC69D69E3 /* Frameworks */ = {
@@ -313,6 +508,7 @@
 			files = (
 				C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */,
 				C008504F2338FAA600D624F9 /* SleepMusicViewController.swift in Sources */,
+				C0D0FF5925ADC4CB005A22D4 /* Alarm.swift in Sources */,
 				C008504D2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift in Sources */,
 				C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */,
 				C03B567D232C990C00BAFA69 /* Model.swift in Sources */,
