@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import UserNotifications
 
 class SetQuickAlarmView: UIView {
@@ -94,13 +93,14 @@ class SetQuickAlarmView: UIView {
             }
         }
 
-        let newAlarm = Alarm()
-        newAlarm.name = "Quick"
-        newAlarm.alarm = date
-        let realm = try! Realm()
-       try! realm.write {
-            realm.add(newAlarm)
-        }
+        //TODO: 퀵알람저장
+//        let newAlarm = Alarm()
+//        newAlarm.name = "Quick"
+//        newAlarm.alarm = date
+//        let realm = try! Realm()
+//       try! realm.write {
+//            realm.add(newAlarm)
+//        }
         alarmListViewController?.alarmListTableView.reloadData()
         close(sender)
     }

@@ -2,6 +2,5 @@ platform :ios, '13.0'
 use_frameworks!
 
 target 'MyAlarm' do
-  pod 'RealmSwift'
   pod 'Alamofire', '~> 5.0.0-rc.2'
 end

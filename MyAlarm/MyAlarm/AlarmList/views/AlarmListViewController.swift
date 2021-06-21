@@ -7,17 +7,22 @@
 //
 
 import UIKit
-import RealmSwift
 import CoreLocation
 
-class AlarmListViewController: UIViewController {
+class AlarmListViewController: UIViewController, BasicViewType {
+    typealias PresenterType = AlarmListPresenter
+    
+    var presenter: PresenterType
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         return formatter
     }()
-    
-    var list: Results<Alarm>?
     
     lazy var locationManager: CLLocationManager = {
         let m = CLLocationManager()
@@ -31,15 +36,25 @@ class AlarmListViewController: UIViewController {
     
     @IBOutlet weak var noAlarmStackView: UIStackView!
     
+    private let tableView: UITableView = {
+        return UITableView()
+    }()
+    
     @IBAction func addAlarm(_ sender: Any) {
         let view = AddAlarmView(frame: self.view.frame)
         view.alarmListViewController = self
         self.view.addSubview(view)
     }
     
+    init(with presenter: PresenterType) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+        self.presenter.view = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter.viewDidLoad()
         let image = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = image
@@ -52,9 +67,9 @@ class AlarmListViewController: UIViewController {
         
         addAlarm.layer.cornerRadius = addAlarm.frame.height / 2
         
-        let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        list = realm.objects(Alarm.self)
+//        let realm = try! Realm()
+        
+//        list = realm.objects(Alarm.self)
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -76,47 +91,35 @@ class AlarmListViewController: UIViewController {
     }
 }
 extension AlarmListViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    private func updateNoAlarmStackView() {
+        let show: CGFloat = 1
+        let hide: CGFloat = 0
+        noAlarmStackView.alpha = presenter.getAlarms().count == .zero ? show : hide
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            guard let list = list else { return 0 }
-            if list.count == 0 {
-                self.noAlarmStackView.alpha = 1
-            } else if list.count == 1 {
-                self.noAlarmStackView.alpha = 0
-            }
-            return list.count
-        default:
-            return 0
-        }
+        updateNoAlarmStackView()
+        return presenter.getAlarms().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.reuseIdentifier, for: indexPath) as! AlarmListTableViewCell
-            if let list = list {
-                let target = list[indexPath.row]
-                cell.timeLabel.text = dateFormatter.string(for: target.alarm)
-                
-                switch target.name {
-                case "Quick":
-                    cell.alarmImageView.image = UIImage(named: "IconQuickAlarm_Normal", in: .main, compatibleWith: nil)
-                    cell.repeatStatusStackView.alpha = 0
-                case "Alarm":
-                    cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
-                    cell.repeatStatusStackView.alpha = 0
-                default:
-                    cell.alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal", in: .main, compatibleWith: nil)
-                    cell.repeatStatusStackView.alpha = 1
-                }
-            }
-            return cell
-        default:
-            fatalError()
-        }
+        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.reuseIdentifier, for: indexPath) as! AlarmListTableViewCell
+        
+        cell.update(alarm: presenter.getAlarms()[indexPath.row]) 
+//        switch indexPath.section {
+//        case 0:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: AlarmListTableViewCell.reuseIdentifier, for: indexPath) as! AlarmListTableViewCell
+//            if let list = list {
+//                let target = list[indexPath.row]
+//                cell.timeLabel.text = dateFormatter.string(for: target.alarm)
+//
+//                
+//            }
+//            return cell
+//        default:
+//            fatalError()
+//        }
     }
 }
 
@@ -128,15 +131,15 @@ extension AlarmListViewController: UITableViewDelegate {
         return .delete
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete, let target = list?[indexPath.row] else { return }
-        
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [target.name])
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.delete(target)
-        }
-        tableView.deleteRows(at: [indexPath], with: .fade)
+//        guard editingStyle == .delete, let target = list?[indexPath.row] else { return }
+//
+//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [target.name])
+//
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.delete(target)
+//        }
+//        tableView.deleteRows(at: [indexPath], with: .fade)
     }
 }
 

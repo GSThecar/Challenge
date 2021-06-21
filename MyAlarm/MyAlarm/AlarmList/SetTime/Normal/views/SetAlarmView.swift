@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import UserNotifications
 
 class SetAlarmView: UIView {
@@ -36,48 +35,49 @@ class SetAlarmView: UIView {
     }
     
     @IBAction func setAndSave(_ sender: Any) {
-        let newAlarm = Alarm()
-        newAlarm.alarm = datePickerView.date
-        newAlarm.repeatStatus = repeatSwitch.isOn
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Alarm"
-        content.body = "The alarm ⏰ is going off! Wake up!"
-        let soundName = UNNotificationSoundName(rawValue: "Sunshine_1.mp3")
-        let sound = UNNotificationSound(named: soundName)
-        content.sound = sound
-        
-        let dateComponent = Calendar.current.dateComponents([.hour, .minute], from: datePickerView.date)
-        if repeatSwitch.isOn {
-            newAlarm.name = "Repeat Alarm"
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
-            let request = UNNotificationRequest(identifier: "Repeat Alarm", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("Set Repeat Alarm Done")
-                }
-            }
-        } else {
-            newAlarm.name = "Alarm"
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
-            let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("Set Alarm Done")
-                }
-            }
-        }
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(newAlarm)
-        }
+        //TODO: 알람설정
+//        let newAlarm = Alarm()
+//        newAlarm.alarm = datePickerView.date
+//        newAlarm.repeatStatus = repeatSwitch.isOn
+//        
+//        let content = UNMutableNotificationContent()
+//        content.title = "Alarm"
+//        content.body = "The alarm ⏰ is going off! Wake up!"
+//        let soundName = UNNotificationSoundName(rawValue: "Sunshine_1.mp3")
+//        let sound = UNNotificationSound(named: soundName)
+//        content.sound = sound
+//        
+//        let dateComponent = Calendar.current.dateComponents([.hour, .minute], from: datePickerView.date)
+//        if repeatSwitch.isOn {
+//            newAlarm.name = "Repeat Alarm"
+//            
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
+//            let request = UNNotificationRequest(identifier: "Repeat Alarm", content: content, trigger: trigger)
+//            UNUserNotificationCenter.current().add(request) { (error) in
+//                if let error = error {
+//                    print(error)
+//                } else {
+//                    print("Set Repeat Alarm Done")
+//                }
+//            }
+//        } else {
+//            newAlarm.name = "Alarm"
+//            
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+//            let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
+//            UNUserNotificationCenter.current().add(request) { (error) in
+//                if let error = error {
+//                    print(error)
+//                } else {
+//                    print("Set Alarm Done")
+//                }
+//            }
+//        }
+//        
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.add(newAlarm)
+//        }
         alarmListViewController?.alarmListTableView.reloadData()
         close(sender)
     }

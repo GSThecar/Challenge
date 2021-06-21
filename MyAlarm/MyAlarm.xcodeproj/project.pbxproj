@@ -25,6 +25,17 @@
 		C03B5689232D0DA500BAFA69 /* AlarmListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */; };
 		C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B568A232F543200BAFA69 /* AddAlarmView.swift */; };
 		C03B568D232F544500BAFA69 /* AddAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B568C232F544500BAFA69 /* AddAlarmView.xib */; };
+		C03E58E426806E94004299F7 /* AlarmListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58E326806E94004299F7 /* AlarmListPresenter.swift */; };
+		C03E58E626806EC1004299F7 /* BasicPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58E526806EC1004299F7 /* BasicPresenterType.swift */; };
+		C03E58EA26807017004299F7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58E926807017004299F7 /* CoreDataManager.swift */; };
+		C03E58ED268070CE004299F7 /* MyAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C03E58EB268070CE004299F7 /* MyAlarm.xcdatamodeld */; };
+		C03E58EF26807538004299F7 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58EE26807538004299F7 /* AlarmService.swift */; };
+		C03E58F126807598004299F7 /* CoreDataServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58F026807598004299F7 /* CoreDataServiceType.swift */; };
+		C03E58F326807614004299F7 /* BasicServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58F226807614004299F7 /* BasicServiceType.swift */; };
+		C03E58FE26808505004299F7 /* BasicViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E58FD26808505004299F7 /* BasicViewType.swift */; };
+		C03E59022680BAF5004299F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E59012680BAF5004299F7 /* TabBarController.swift */; };
+		C03E59042680BB29004299F7 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E59032680BB29004299F7 /* TabBarPresenter.swift */; };
+		C03E59062680D13A004299F7 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E59052680D13A004299F7 /* ExtensionDate.swift */; };
 		C041EF4E235B014F00EF162B /* Sunshine_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF44235B014E00EF162B /* Sunshine_4.mp3 */; };
 		C041EF4F235B014F00EF162B /* Sunshine_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF45235B014E00EF162B /* Sunshine_2.mp3 */; };
 		C041EF50235B014F00EF162B /* Sunshine_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C041EF46235B014E00EF162B /* Sunshine_7.mp3 */; };
@@ -40,7 +51,6 @@
 		C04A84D22335E118002307F9 /* SetQuickAlarmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */; };
 		C0775383234F1E47003004E1 /* VoiceMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0775382234F1E47003004E1 /* VoiceMemoViewController.swift */; };
 		C0D052E225ADC88D00B984A2 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D052E125ADC88D00B984A2 /* ExtensionUIViewController.swift */; };
-		C0D0FF5925ADC4CB005A22D4 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */; };
 		C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */; };
 		C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +76,17 @@
 		C03B5687232D0DA500BAFA69 /* AlarmListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListTableViewCell.xib; sourceTree = "<group>"; };
 		C03B568A232F543200BAFA69 /* AddAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmView.swift; sourceTree = "<group>"; };
 		C03B568C232F544500BAFA69 /* AddAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlarmView.xib; sourceTree = "<group>"; };
+		C03E58E326806E94004299F7 /* AlarmListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListPresenter.swift; sourceTree = "<group>"; };
+		C03E58E526806EC1004299F7 /* BasicPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenterType.swift; sourceTree = "<group>"; };
+		C03E58E926807017004299F7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C03E58EC268070CE004299F7 /* Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alarm.xcdatamodel; sourceTree = "<group>"; };
+		C03E58EE26807538004299F7 /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
+		C03E58F026807598004299F7 /* CoreDataServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceType.swift; sourceTree = "<group>"; };
+		C03E58F226807614004299F7 /* BasicServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicServiceType.swift; sourceTree = "<group>"; };
+		C03E58FD26808505004299F7 /* BasicViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewType.swift; sourceTree = "<group>"; };
+		C03E59012680BAF5004299F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C03E59032680BB29004299F7 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		C03E59052680D13A004299F7 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		C041EF44235B014E00EF162B /* Sunshine_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_4.mp3; sourceTree = "<group>"; };
 		C041EF45235B014E00EF162B /* Sunshine_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_2.mp3; sourceTree = "<group>"; };
 		C041EF46235B014E00EF162B /* Sunshine_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunshine_7.mp3; sourceTree = "<group>"; };
@@ -81,7 +102,6 @@
 		C04A84D12335E118002307F9 /* SetQuickAlarmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetQuickAlarmView.xib; sourceTree = "<group>"; };
 		C0775382234F1E47003004E1 /* VoiceMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoViewController.swift; sourceTree = "<group>"; };
 		C0D052E125ADC88D00B984A2 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
-		C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		C0E63B5E233F1CE700FF2A0B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		C0FF0AE1233DF920004F7132 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		D3B8D99FF53ADF864BEE92B1 /* Pods-MyAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAlarm.release.xcconfig"; path = "Target Support Files/Pods-MyAlarm/Pods-MyAlarm.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +132,7 @@
 		C03B565E232BCC5B00BAFA69 = {
 			isa = PBXGroup;
 			children = (
+				C03E58EB268070CE004299F7 /* MyAlarm.xcdatamodeld */,
 				C03B5669232BCC5B00BAFA69 /* MyAlarm */,
 				C03B5668232BCC5B00BAFA69 /* Products */,
 				733D27092B786FD73711E486 /* Pods */,
@@ -143,8 +164,54 @@
 				C03B5673232BCC5C00BAFA69 /* LaunchScreen.storyboard */,
 				C03B5676232BCC5C00BAFA69 /* info.plist */,
 				C03B567C232C990C00BAFA69 /* Model.swift */,
+				C03E59012680BAF5004299F7 /* TabBarController.swift */,
+				C03E59032680BB29004299F7 /* TabBarPresenter.swift */,
 			);
 			path = MyAlarm;
+			sourceTree = "<group>";
+		};
+		C03E58F826807F63004299F7 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				C03E58FB26807F8E004299F7 /* Service */,
+				C03E58FA26807F7F004299F7 /* Presenter */,
+				C03E58F926807F6B004299F7 /* ViewController */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		C03E58F926807F6B004299F7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C03E58FD26808505004299F7 /* BasicViewType.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C03E58FA26807F7F004299F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C03E58E526806EC1004299F7 /* BasicPresenterType.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C03E58FB26807F8E004299F7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C03E58FC26807F9F004299F7 /* CoreData */,
+				C03E58F226807614004299F7 /* BasicServiceType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C03E58FC26807F9F004299F7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C03E58E926807017004299F7 /* CoreDataManager.swift */,
+				C03E58F026807598004299F7 /* CoreDataServiceType.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C041EF43235B011600EF162B /* Sounds */ = {
@@ -169,7 +236,9 @@
 		C0D052E025ADC85D00B984A2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C03E58F826807F63004299F7 /* Basic */,
 				C0D052E125ADC88D00B984A2 /* ExtensionUIViewController.swift */,
+				C03E59052680D13A004299F7 /* ExtensionDate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -180,7 +249,8 @@
 				C0D0FF4925ADC320005A22D4 /* SetTime */,
 				C0D0FF4625ADC2EF005A22D4 /* AddAlarm */,
 				C0D0FF3925ADC01A005A22D4 /* views */,
-				C0D0FF5825ADC4CB005A22D4 /* Alarm.swift */,
+				C03E58E326806E94004299F7 /* AlarmListPresenter.swift */,
+				C03E58EE26807538004299F7 /* AlarmService.swift */,
 			);
 			path = AlarmList;
 			sourceTree = "<group>";
@@ -517,21 +587,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03E58E426806E94004299F7 /* AlarmListPresenter.swift in Sources */,
+				C03E58FE26808505004299F7 /* BasicViewType.swift in Sources */,
 				C0E63B5F233F1CE700FF2A0B /* WeatherTableViewCell.swift in Sources */,
+				C03E59022680BAF5004299F7 /* TabBarController.swift in Sources */,
 				C008504F2338FAA600D624F9 /* SleepMusicViewController.swift in Sources */,
-				C0D0FF5925ADC4CB005A22D4 /* Alarm.swift in Sources */,
 				C008504D2338EFA800D624F9 /* SleepMusicCollectionViewCell.swift in Sources */,
 				C0D052E225ADC88D00B984A2 /* ExtensionUIViewController.swift in Sources */,
+				C03E59042680BB29004299F7 /* TabBarPresenter.swift in Sources */,
 				C03B568B232F543200BAFA69 /* AddAlarmView.swift in Sources */,
+				C03E58F126807598004299F7 /* CoreDataServiceType.swift in Sources */,
 				C03B567D232C990C00BAFA69 /* Model.swift in Sources */,
+				C03E58EF26807538004299F7 /* AlarmService.swift in Sources */,
+				C03E59062680D13A004299F7 /* ExtensionDate.swift in Sources */,
 				C038EF2E2334A09700CF4901 /* TodayInformationTableViewController.swift in Sources */,
 				C01E9BEA2349DBA80020BA62 /* WakeUpViewController.swift in Sources */,
 				C03B566B232BCC5B00BAFA69 /* AppDelegate.swift in Sources */,
 				C04A84D02335E107002307F9 /* SetQuickAlarmView.swift in Sources */,
 				C03B5685232D0D3E00BAFA69 /* AlarmListViewController.swift in Sources */,
+				C03E58ED268070CE004299F7 /* MyAlarm.xcdatamodeld in Sources */,
 				C03AF33C23337B2A00E2D273 /* SetAlarmView.swift in Sources */,
 				C03B5688232D0DA500BAFA69 /* AlarmListTableViewCell.swift in Sources */,
 				C0775383234F1E47003004E1 /* VoiceMemoViewController.swift in Sources */,
+				C03E58E626806EC1004299F7 /* BasicPresenterType.swift in Sources */,
+				C03E58EA26807017004299F7 /* CoreDataManager.swift in Sources */,
+				C03E58F326807614004299F7 /* BasicServiceType.swift in Sources */,
 				C0FF0AE2233DF920004F7132 /* WeatherDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,6 +820,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C03E58EB268070CE004299F7 /* MyAlarm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C03E58EC268070CE004299F7 /* Alarm.xcdatamodel */,
+			);
+			currentVersion = C03E58EC268070CE004299F7 /* Alarm.xcdatamodel */;
+			path = MyAlarm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C03B565F232BCC5B00BAFA69 /* Project object */;
 }

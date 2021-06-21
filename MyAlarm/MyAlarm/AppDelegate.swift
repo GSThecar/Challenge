@@ -8,7 +8,6 @@
 
 import UIKit
 import UserNotifications
-import RealmSwift
 import AVFoundation
 
 @UIApplicationMain
@@ -34,18 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Setting category to AVAudioSessionCategoryPlayback failed.")
         }
         
-        let config = Realm.Configuration(
-            schemaVersion: 2,
-            migrationBlock: { migration, oldSchemaVersion in
-                if oldSchemaVersion < 2 {
-                    // Nothing to do!
-                    // Realm will automatically detect new properties and removed properties
-                    // And will update the schema on disk automatically
-                }
-        })
-        Realm.Configuration.defaultConfiguration = config
-        _ = try! Realm()
+        setUpWindow()
+        
         return true
+    }
+    
+    private func setUpWindow() {
+        window = UIWindow()
+        window?.rootViewController = TabBarController(with: TabBarPresenter())
+        window?.makeKeyAndVisible()
     }
 }
 

@@ -27,6 +27,23 @@ class AlarmListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func update(alarm: Alarm) {
+        update(name: alarm.name)
+        update(date: alarm.date)
+    }
+    
+    private func update(name: String?) {
+        if name == "Quick" {
+            alarmImageView.image = UIImage(named: "IconQuickAlarm_Normal")
+        } else {
+            alarmImageView.image = UIImage(named: "filled_icon-navi-01-dis.1_Normal")
+        }
+    }
+    
+    private func update(date: Date?) {
+        timeLabel.text = date?.toString(format: "yyyy-MM-dd HH:mm:ss") ?? "-"
+    }
+    
 }
 
 class TopRoundContentView: UIView {
